@@ -5,6 +5,7 @@ import { BreadcrumbHeader } from "@/_components/sidebar/BreadcrumbHeader";
 
 export const Route = createFileRoute("/dashboard")({
   component: LayoutDashboard,
+  loader: () => ({ crumb: "Dashboard" }),
 });
 
 function LayoutDashboard() {
