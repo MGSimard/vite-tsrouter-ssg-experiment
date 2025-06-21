@@ -31,6 +31,7 @@ export function NavAdmin({
 }) {
   const { isMobile } = useSidebar();
 
+  // TODO: Consider mt-auto on admin sidebarGroup to push down by user?
   return (
     <SidebarGroup>
       <SidebarGroupLabel>Admin</SidebarGroupLabel>
