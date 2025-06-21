@@ -37,8 +37,6 @@ export function DashboardBreadcrumbs() {
   const matches = useMatches();
   if (matches.some((match) => match.status === "pending")) return null;
 
-  console.log(matches);
-
   const segments = matches.filter((match) => isMatch(match, "loaderData.crumb"));
   const currentSegment = segments.pop();
   const ITEMS_TO_DISPLAY = 3;
