@@ -25,14 +25,17 @@ export function Navbar() {
           <ul className="flex items-center gap-4">
             {NAV_LINKS.map((link) => (
               <li key={link.label}>
-                <Link to={link.href}>{link.label}</Link>
+                <Link to={link.href} activeProps={{ className: "text-primary" }}>
+                  {link.label}
+                </Link>
               </li>
             ))}
           </ul>
         </nav>
         <div className="flex items-center gap-4">
           <ToggleTheme />
-          <Button variant="outline">Login</Button>
+          <Button variant="secondary">Sign in</Button>
+          <Button variant="default">Sign up</Button>
         </div>
       </div>
     </header>
