@@ -22,6 +22,7 @@ import { Route as DashboardOrganizationSettingsTeamIndexRouteImport } from './ro
 import { Route as DashboardOrganizationSettingsIntegrationsIndexRouteImport } from './routes/dashboard/organization-settings/integrations/index'
 import { Route as DashboardOrganizationSettingsBillingIndexRouteImport } from './routes/dashboard/organization-settings/billing/index'
 import { Route as DashboardOrganizationSettingsApiKeysIndexRouteImport } from './routes/dashboard/organization-settings/api-keys/index'
+import { Route as DashboardOrganizationSettingsBillingNestedTestIndexRouteImport } from './routes/dashboard/organization-settings/billing/nested-test/index'
 
 const DashboardRouteRoute = DashboardRouteRouteImport.update({
   id: '/dashboard',
@@ -93,6 +94,12 @@ const DashboardOrganizationSettingsApiKeysIndexRoute =
     path: '/organization-settings/api-keys/',
     getParentRoute: () => DashboardRouteRoute,
   } as any)
+const DashboardOrganizationSettingsBillingNestedTestIndexRoute =
+  DashboardOrganizationSettingsBillingNestedTestIndexRouteImport.update({
+    id: '/organization-settings/billing/nested-test/',
+    path: '/organization-settings/billing/nested-test/',
+    getParentRoute: () => DashboardRouteRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/dashboard': typeof DashboardRouteRouteWithChildren
@@ -108,6 +115,7 @@ export interface FileRoutesByFullPath {
   '/dashboard/organization-settings/billing': typeof DashboardOrganizationSettingsBillingIndexRoute
   '/dashboard/organization-settings/integrations': typeof DashboardOrganizationSettingsIntegrationsIndexRoute
   '/dashboard/organization-settings/team': typeof DashboardOrganizationSettingsTeamIndexRoute
+  '/dashboard/organization-settings/billing/nested-test': typeof DashboardOrganizationSettingsBillingNestedTestIndexRoute
 }
 export interface FileRoutesByTo {
   '/about': typeof frontFacingAboutRoute
@@ -122,6 +130,7 @@ export interface FileRoutesByTo {
   '/dashboard/organization-settings/billing': typeof DashboardOrganizationSettingsBillingIndexRoute
   '/dashboard/organization-settings/integrations': typeof DashboardOrganizationSettingsIntegrationsIndexRoute
   '/dashboard/organization-settings/team': typeof DashboardOrganizationSettingsTeamIndexRoute
+  '/dashboard/organization-settings/billing/nested-test': typeof DashboardOrganizationSettingsBillingNestedTestIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -138,6 +147,7 @@ export interface FileRoutesById {
   '/dashboard/organization-settings/billing/': typeof DashboardOrganizationSettingsBillingIndexRoute
   '/dashboard/organization-settings/integrations/': typeof DashboardOrganizationSettingsIntegrationsIndexRoute
   '/dashboard/organization-settings/team/': typeof DashboardOrganizationSettingsTeamIndexRoute
+  '/dashboard/organization-settings/billing/nested-test/': typeof DashboardOrganizationSettingsBillingNestedTestIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -155,6 +165,7 @@ export interface FileRouteTypes {
     | '/dashboard/organization-settings/billing'
     | '/dashboard/organization-settings/integrations'
     | '/dashboard/organization-settings/team'
+    | '/dashboard/organization-settings/billing/nested-test'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/about'
@@ -169,6 +180,7 @@ export interface FileRouteTypes {
     | '/dashboard/organization-settings/billing'
     | '/dashboard/organization-settings/integrations'
     | '/dashboard/organization-settings/team'
+    | '/dashboard/organization-settings/billing/nested-test'
   id:
     | '__root__'
     | '/dashboard'
@@ -184,6 +196,7 @@ export interface FileRouteTypes {
     | '/dashboard/organization-settings/billing/'
     | '/dashboard/organization-settings/integrations/'
     | '/dashboard/organization-settings/team/'
+    | '/dashboard/organization-settings/billing/nested-test/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -286,6 +299,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DashboardOrganizationSettingsApiKeysIndexRouteImport
       parentRoute: typeof DashboardRouteRoute
     }
+    '/dashboard/organization-settings/billing/nested-test/': {
+      id: '/dashboard/organization-settings/billing/nested-test/'
+      path: '/organization-settings/billing/nested-test'
+      fullPath: '/dashboard/organization-settings/billing/nested-test'
+      preLoaderRoute: typeof DashboardOrganizationSettingsBillingNestedTestIndexRouteImport
+      parentRoute: typeof DashboardRouteRoute
+    }
   }
 }
 
@@ -299,6 +319,7 @@ interface DashboardRouteRouteChildren {
   DashboardOrganizationSettingsBillingIndexRoute: typeof DashboardOrganizationSettingsBillingIndexRoute
   DashboardOrganizationSettingsIntegrationsIndexRoute: typeof DashboardOrganizationSettingsIntegrationsIndexRoute
   DashboardOrganizationSettingsTeamIndexRoute: typeof DashboardOrganizationSettingsTeamIndexRoute
+  DashboardOrganizationSettingsBillingNestedTestIndexRoute: typeof DashboardOrganizationSettingsBillingNestedTestIndexRoute
 }
 
 const DashboardRouteRouteChildren: DashboardRouteRouteChildren = {
@@ -316,6 +337,8 @@ const DashboardRouteRouteChildren: DashboardRouteRouteChildren = {
     DashboardOrganizationSettingsIntegrationsIndexRoute,
   DashboardOrganizationSettingsTeamIndexRoute:
     DashboardOrganizationSettingsTeamIndexRoute,
+  DashboardOrganizationSettingsBillingNestedTestIndexRoute:
+    DashboardOrganizationSettingsBillingNestedTestIndexRoute,
 }
 
 const DashboardRouteRouteWithChildren = DashboardRouteRoute._addFileChildren(
