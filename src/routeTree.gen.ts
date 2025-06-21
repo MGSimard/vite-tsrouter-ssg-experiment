@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as DashboardRouteRouteImport } from './routes/dashboard/route'
+import { Route as frontFacingRouteRouteImport } from './routes/(front-facing)/route'
 import { Route as DashboardIndexRouteImport } from './routes/dashboard/index'
 import { Route as frontFacingIndexRouteImport } from './routes/(front-facing)/index'
 import { Route as frontFacingFeaturesRouteImport } from './routes/(front-facing)/features'
@@ -32,25 +33,29 @@ const DashboardRouteRoute = DashboardRouteRouteImport.update({
   path: '/dashboard',
   getParentRoute: () => rootRouteImport,
 } as any)
+const frontFacingRouteRoute = frontFacingRouteRouteImport.update({
+  id: '/(front-facing)',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const DashboardIndexRoute = DashboardIndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => DashboardRouteRoute,
 } as any)
 const frontFacingIndexRoute = frontFacingIndexRouteImport.update({
-  id: '/(front-facing)/',
+  id: '/',
   path: '/',
-  getParentRoute: () => rootRouteImport,
+  getParentRoute: () => frontFacingRouteRoute,
 } as any)
 const frontFacingFeaturesRoute = frontFacingFeaturesRouteImport.update({
-  id: '/(front-facing)/features',
+  id: '/features',
   path: '/features',
-  getParentRoute: () => rootRouteImport,
+  getParentRoute: () => frontFacingRouteRoute,
 } as any)
 const frontFacingAboutRoute = frontFacingAboutRouteImport.update({
-  id: '/(front-facing)/about',
+  id: '/about',
   path: '/about',
-  getParentRoute: () => rootRouteImport,
+  getParentRoute: () => frontFacingRouteRoute,
 } as any)
 const DashboardOrganizationSettingsRouteRoute =
   DashboardOrganizationSettingsRouteRouteImport.update({
@@ -122,11 +127,11 @@ const DashboardOrganizationSettingsBillingNestedTestDeepRoute =
   } as any)
 
 export interface FileRoutesByFullPath {
+  '/': typeof frontFacingIndexRoute
   '/dashboard': typeof DashboardRouteRouteWithChildren
   '/dashboard/organization-settings': typeof DashboardOrganizationSettingsRouteRouteWithChildren
   '/about': typeof frontFacingAboutRoute
   '/features': typeof frontFacingFeaturesRoute
-  '/': typeof frontFacingIndexRoute
   '/dashboard/': typeof DashboardIndexRoute
   '/dashboard/organization-settings/api-keys': typeof DashboardOrganizationSettingsApiKeysRoute
   '/dashboard/organization-settings/billing': typeof DashboardOrganizationSettingsBillingRouteWithChildren
@@ -159,6 +164,7 @@ export interface FileRoutesByTo {
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
+  '/(front-facing)': typeof frontFacingRouteRouteWithChildren
   '/dashboard': typeof DashboardRouteRouteWithChildren
   '/dashboard/organization-settings': typeof DashboardOrganizationSettingsRouteRouteWithChildren
   '/(front-facing)/about': typeof frontFacingAboutRoute
@@ -180,11 +186,11 @@ export interface FileRoutesById {
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
+    | '/'
     | '/dashboard'
     | '/dashboard/organization-settings'
     | '/about'
     | '/features'
-    | '/'
     | '/dashboard/'
     | '/dashboard/organization-settings/api-keys'
     | '/dashboard/organization-settings/billing'
@@ -216,6 +222,7 @@ export interface FileRouteTypes {
     | '/dashboard/organization-settings/billing/nested-test/deep'
   id:
     | '__root__'
+    | '/(front-facing)'
     | '/dashboard'
     | '/dashboard/organization-settings'
     | '/(front-facing)/about'
@@ -236,10 +243,8 @@ export interface FileRouteTypes {
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
+  frontFacingRouteRoute: typeof frontFacingRouteRouteWithChildren
   DashboardRouteRoute: typeof DashboardRouteRouteWithChildren
-  frontFacingAboutRoute: typeof frontFacingAboutRoute
-  frontFacingFeaturesRoute: typeof frontFacingFeaturesRoute
-  frontFacingIndexRoute: typeof frontFacingIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -249,6 +254,13 @@ declare module '@tanstack/react-router' {
       path: '/dashboard'
       fullPath: '/dashboard'
       preLoaderRoute: typeof DashboardRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(front-facing)': {
+      id: '/(front-facing)'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof frontFacingRouteRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/dashboard/': {
@@ -263,21 +275,21 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof frontFacingIndexRouteImport
-      parentRoute: typeof rootRouteImport
+      parentRoute: typeof frontFacingRouteRoute
     }
     '/(front-facing)/features': {
       id: '/(front-facing)/features'
       path: '/features'
       fullPath: '/features'
       preLoaderRoute: typeof frontFacingFeaturesRouteImport
-      parentRoute: typeof rootRouteImport
+      parentRoute: typeof frontFacingRouteRoute
     }
     '/(front-facing)/about': {
       id: '/(front-facing)/about'
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof frontFacingAboutRouteImport
-      parentRoute: typeof rootRouteImport
+      parentRoute: typeof frontFacingRouteRoute
     }
     '/dashboard/organization-settings': {
       id: '/dashboard/organization-settings'
@@ -366,6 +378,21 @@ declare module '@tanstack/react-router' {
   }
 }
 
+interface frontFacingRouteRouteChildren {
+  frontFacingAboutRoute: typeof frontFacingAboutRoute
+  frontFacingFeaturesRoute: typeof frontFacingFeaturesRoute
+  frontFacingIndexRoute: typeof frontFacingIndexRoute
+}
+
+const frontFacingRouteRouteChildren: frontFacingRouteRouteChildren = {
+  frontFacingAboutRoute: frontFacingAboutRoute,
+  frontFacingFeaturesRoute: frontFacingFeaturesRoute,
+  frontFacingIndexRoute: frontFacingIndexRoute,
+}
+
+const frontFacingRouteRouteWithChildren =
+  frontFacingRouteRoute._addFileChildren(frontFacingRouteRouteChildren)
+
 interface DashboardOrganizationSettingsBillingNestedTestRouteChildren {
   DashboardOrganizationSettingsBillingNestedTestDeepRoute: typeof DashboardOrganizationSettingsBillingNestedTestDeepRoute
 }
@@ -447,10 +474,8 @@ const DashboardRouteRouteWithChildren = DashboardRouteRoute._addFileChildren(
 )
 
 const rootRouteChildren: RootRouteChildren = {
+  frontFacingRouteRoute: frontFacingRouteRouteWithChildren,
   DashboardRouteRoute: DashboardRouteRouteWithChildren,
-  frontFacingAboutRoute: frontFacingAboutRoute,
-  frontFacingFeaturesRoute: frontFacingFeaturesRoute,
-  frontFacingIndexRoute: frontFacingIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

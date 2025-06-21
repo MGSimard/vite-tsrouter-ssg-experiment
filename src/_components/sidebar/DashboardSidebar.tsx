@@ -3,7 +3,7 @@ import { NavTeam } from "@/_components/sidebar/NavTeam";
 import { NavMain } from "@/_components/sidebar/NavMain";
 import { NavAdmin } from "@/_components/sidebar/NavAdmin";
 import { NavUser } from "@/_components/sidebar/NavUser";
-import { Activity, ChartNoAxesColumnIncreasing, Gauge, Settings2, ShieldCheck, Target } from "lucide-react";
+import { Activity, ChartNoAxesColumnIncreasing, Gauge, Settings, Settings2, ShieldCheck, Target } from "lucide-react";
 
 const NAV_LINKS = {
   navMain: [
@@ -38,7 +38,7 @@ const NAV_LINKS = {
     {
       title: "Organization Settings",
       url: "/dashboard/organization-settings",
-      icon: Settings2,
+      icon: Settings,
       items: [
         {
           title: "General",
