@@ -20,6 +20,8 @@ const initialState: ThemeProviderState = {
 
 const ThemeProviderContext = createContext<ThemeProviderState>(initialState);
 
+// TODO: Consider theme syncing across tabs
+
 export function ThemeProvider({
   children,
   defaultTheme = "system",
