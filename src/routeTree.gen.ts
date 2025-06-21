@@ -9,50 +9,295 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as IndexRouteImport } from './routes/index'
+import { Route as DashboardIndexRouteImport } from './routes/dashboard/index'
+import { Route as frontFacingIndexRouteImport } from './routes/(front-facing)/index'
+import { Route as frontFacingFeaturesRouteImport } from './routes/(front-facing)/features'
+import { Route as frontFacingAboutRouteImport } from './routes/(front-facing)/about'
+import { Route as DashboardOrganizationSettingsIndexRouteImport } from './routes/dashboard/organization-settings/index'
+import { Route as DashboardLinkTwoIndexRouteImport } from './routes/dashboard/link-two/index'
+import { Route as DashboardLinkThreeIndexRouteImport } from './routes/dashboard/link-three/index'
+import { Route as DashboardLinkFourIndexRouteImport } from './routes/dashboard/link-four/index'
+import { Route as DashboardOrganizationSettingsTeamIndexRouteImport } from './routes/dashboard/organization-settings/team/index'
+import { Route as DashboardOrganizationSettingsIntegrationsIndexRouteImport } from './routes/dashboard/organization-settings/integrations/index'
+import { Route as DashboardOrganizationSettingsBillingIndexRouteImport } from './routes/dashboard/organization-settings/billing/index'
+import { Route as DashboardOrganizationSettingsApiKeysIndexRouteImport } from './routes/dashboard/organization-settings/api-keys/index'
 
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
+const DashboardIndexRoute = DashboardIndexRouteImport.update({
+  id: '/dashboard/',
+  path: '/dashboard/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const frontFacingIndexRoute = frontFacingIndexRouteImport.update({
+  id: '/(front-facing)/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const frontFacingFeaturesRoute = frontFacingFeaturesRouteImport.update({
+  id: '/(front-facing)/features',
+  path: '/features',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const frontFacingAboutRoute = frontFacingAboutRouteImport.update({
+  id: '/(front-facing)/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardOrganizationSettingsIndexRoute =
+  DashboardOrganizationSettingsIndexRouteImport.update({
+    id: '/dashboard/organization-settings/',
+    path: '/dashboard/organization-settings/',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const DashboardLinkTwoIndexRoute = DashboardLinkTwoIndexRouteImport.update({
+  id: '/dashboard/link-two/',
+  path: '/dashboard/link-two/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardLinkThreeIndexRoute = DashboardLinkThreeIndexRouteImport.update({
+  id: '/dashboard/link-three/',
+  path: '/dashboard/link-three/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardLinkFourIndexRoute = DashboardLinkFourIndexRouteImport.update({
+  id: '/dashboard/link-four/',
+  path: '/dashboard/link-four/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardOrganizationSettingsTeamIndexRoute =
+  DashboardOrganizationSettingsTeamIndexRouteImport.update({
+    id: '/dashboard/organization-settings/team/',
+    path: '/dashboard/organization-settings/team/',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const DashboardOrganizationSettingsIntegrationsIndexRoute =
+  DashboardOrganizationSettingsIntegrationsIndexRouteImport.update({
+    id: '/dashboard/organization-settings/integrations/',
+    path: '/dashboard/organization-settings/integrations/',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const DashboardOrganizationSettingsBillingIndexRoute =
+  DashboardOrganizationSettingsBillingIndexRouteImport.update({
+    id: '/dashboard/organization-settings/billing/',
+    path: '/dashboard/organization-settings/billing/',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const DashboardOrganizationSettingsApiKeysIndexRoute =
+  DashboardOrganizationSettingsApiKeysIndexRouteImport.update({
+    id: '/dashboard/organization-settings/api-keys/',
+    path: '/dashboard/organization-settings/api-keys/',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute
+  '/about': typeof frontFacingAboutRoute
+  '/features': typeof frontFacingFeaturesRoute
+  '/': typeof frontFacingIndexRoute
+  '/dashboard': typeof DashboardIndexRoute
+  '/dashboard/link-four': typeof DashboardLinkFourIndexRoute
+  '/dashboard/link-three': typeof DashboardLinkThreeIndexRoute
+  '/dashboard/link-two': typeof DashboardLinkTwoIndexRoute
+  '/dashboard/organization-settings': typeof DashboardOrganizationSettingsIndexRoute
+  '/dashboard/organization-settings/api-keys': typeof DashboardOrganizationSettingsApiKeysIndexRoute
+  '/dashboard/organization-settings/billing': typeof DashboardOrganizationSettingsBillingIndexRoute
+  '/dashboard/organization-settings/integrations': typeof DashboardOrganizationSettingsIntegrationsIndexRoute
+  '/dashboard/organization-settings/team': typeof DashboardOrganizationSettingsTeamIndexRoute
 }
 export interface FileRoutesByTo {
-  '/': typeof IndexRoute
+  '/about': typeof frontFacingAboutRoute
+  '/features': typeof frontFacingFeaturesRoute
+  '/': typeof frontFacingIndexRoute
+  '/dashboard': typeof DashboardIndexRoute
+  '/dashboard/link-four': typeof DashboardLinkFourIndexRoute
+  '/dashboard/link-three': typeof DashboardLinkThreeIndexRoute
+  '/dashboard/link-two': typeof DashboardLinkTwoIndexRoute
+  '/dashboard/organization-settings': typeof DashboardOrganizationSettingsIndexRoute
+  '/dashboard/organization-settings/api-keys': typeof DashboardOrganizationSettingsApiKeysIndexRoute
+  '/dashboard/organization-settings/billing': typeof DashboardOrganizationSettingsBillingIndexRoute
+  '/dashboard/organization-settings/integrations': typeof DashboardOrganizationSettingsIntegrationsIndexRoute
+  '/dashboard/organization-settings/team': typeof DashboardOrganizationSettingsTeamIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
-  '/': typeof IndexRoute
+  '/(front-facing)/about': typeof frontFacingAboutRoute
+  '/(front-facing)/features': typeof frontFacingFeaturesRoute
+  '/(front-facing)/': typeof frontFacingIndexRoute
+  '/dashboard/': typeof DashboardIndexRoute
+  '/dashboard/link-four/': typeof DashboardLinkFourIndexRoute
+  '/dashboard/link-three/': typeof DashboardLinkThreeIndexRoute
+  '/dashboard/link-two/': typeof DashboardLinkTwoIndexRoute
+  '/dashboard/organization-settings/': typeof DashboardOrganizationSettingsIndexRoute
+  '/dashboard/organization-settings/api-keys/': typeof DashboardOrganizationSettingsApiKeysIndexRoute
+  '/dashboard/organization-settings/billing/': typeof DashboardOrganizationSettingsBillingIndexRoute
+  '/dashboard/organization-settings/integrations/': typeof DashboardOrganizationSettingsIntegrationsIndexRoute
+  '/dashboard/organization-settings/team/': typeof DashboardOrganizationSettingsTeamIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/about'
+    | '/features'
+    | '/'
+    | '/dashboard'
+    | '/dashboard/link-four'
+    | '/dashboard/link-three'
+    | '/dashboard/link-two'
+    | '/dashboard/organization-settings'
+    | '/dashboard/organization-settings/api-keys'
+    | '/dashboard/organization-settings/billing'
+    | '/dashboard/organization-settings/integrations'
+    | '/dashboard/organization-settings/team'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/about'
+    | '/features'
+    | '/'
+    | '/dashboard'
+    | '/dashboard/link-four'
+    | '/dashboard/link-three'
+    | '/dashboard/link-two'
+    | '/dashboard/organization-settings'
+    | '/dashboard/organization-settings/api-keys'
+    | '/dashboard/organization-settings/billing'
+    | '/dashboard/organization-settings/integrations'
+    | '/dashboard/organization-settings/team'
+  id:
+    | '__root__'
+    | '/(front-facing)/about'
+    | '/(front-facing)/features'
+    | '/(front-facing)/'
+    | '/dashboard/'
+    | '/dashboard/link-four/'
+    | '/dashboard/link-three/'
+    | '/dashboard/link-two/'
+    | '/dashboard/organization-settings/'
+    | '/dashboard/organization-settings/api-keys/'
+    | '/dashboard/organization-settings/billing/'
+    | '/dashboard/organization-settings/integrations/'
+    | '/dashboard/organization-settings/team/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute
+  frontFacingAboutRoute: typeof frontFacingAboutRoute
+  frontFacingFeaturesRoute: typeof frontFacingFeaturesRoute
+  frontFacingIndexRoute: typeof frontFacingIndexRoute
+  DashboardIndexRoute: typeof DashboardIndexRoute
+  DashboardLinkFourIndexRoute: typeof DashboardLinkFourIndexRoute
+  DashboardLinkThreeIndexRoute: typeof DashboardLinkThreeIndexRoute
+  DashboardLinkTwoIndexRoute: typeof DashboardLinkTwoIndexRoute
+  DashboardOrganizationSettingsIndexRoute: typeof DashboardOrganizationSettingsIndexRoute
+  DashboardOrganizationSettingsApiKeysIndexRoute: typeof DashboardOrganizationSettingsApiKeysIndexRoute
+  DashboardOrganizationSettingsBillingIndexRoute: typeof DashboardOrganizationSettingsBillingIndexRoute
+  DashboardOrganizationSettingsIntegrationsIndexRoute: typeof DashboardOrganizationSettingsIntegrationsIndexRoute
+  DashboardOrganizationSettingsTeamIndexRoute: typeof DashboardOrganizationSettingsTeamIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/': {
-      id: '/'
+    '/dashboard/': {
+      id: '/dashboard/'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof DashboardIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(front-facing)/': {
+      id: '/(front-facing)/'
       path: '/'
       fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+      preLoaderRoute: typeof frontFacingIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(front-facing)/features': {
+      id: '/(front-facing)/features'
+      path: '/features'
+      fullPath: '/features'
+      preLoaderRoute: typeof frontFacingFeaturesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(front-facing)/about': {
+      id: '/(front-facing)/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof frontFacingAboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard/organization-settings/': {
+      id: '/dashboard/organization-settings/'
+      path: '/dashboard/organization-settings'
+      fullPath: '/dashboard/organization-settings'
+      preLoaderRoute: typeof DashboardOrganizationSettingsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard/link-two/': {
+      id: '/dashboard/link-two/'
+      path: '/dashboard/link-two'
+      fullPath: '/dashboard/link-two'
+      preLoaderRoute: typeof DashboardLinkTwoIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard/link-three/': {
+      id: '/dashboard/link-three/'
+      path: '/dashboard/link-three'
+      fullPath: '/dashboard/link-three'
+      preLoaderRoute: typeof DashboardLinkThreeIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard/link-four/': {
+      id: '/dashboard/link-four/'
+      path: '/dashboard/link-four'
+      fullPath: '/dashboard/link-four'
+      preLoaderRoute: typeof DashboardLinkFourIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard/organization-settings/team/': {
+      id: '/dashboard/organization-settings/team/'
+      path: '/dashboard/organization-settings/team'
+      fullPath: '/dashboard/organization-settings/team'
+      preLoaderRoute: typeof DashboardOrganizationSettingsTeamIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard/organization-settings/integrations/': {
+      id: '/dashboard/organization-settings/integrations/'
+      path: '/dashboard/organization-settings/integrations'
+      fullPath: '/dashboard/organization-settings/integrations'
+      preLoaderRoute: typeof DashboardOrganizationSettingsIntegrationsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard/organization-settings/billing/': {
+      id: '/dashboard/organization-settings/billing/'
+      path: '/dashboard/organization-settings/billing'
+      fullPath: '/dashboard/organization-settings/billing'
+      preLoaderRoute: typeof DashboardOrganizationSettingsBillingIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard/organization-settings/api-keys/': {
+      id: '/dashboard/organization-settings/api-keys/'
+      path: '/dashboard/organization-settings/api-keys'
+      fullPath: '/dashboard/organization-settings/api-keys'
+      preLoaderRoute: typeof DashboardOrganizationSettingsApiKeysIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
-  IndexRoute: IndexRoute,
+  frontFacingAboutRoute: frontFacingAboutRoute,
+  frontFacingFeaturesRoute: frontFacingFeaturesRoute,
+  frontFacingIndexRoute: frontFacingIndexRoute,
+  DashboardIndexRoute: DashboardIndexRoute,
+  DashboardLinkFourIndexRoute: DashboardLinkFourIndexRoute,
+  DashboardLinkThreeIndexRoute: DashboardLinkThreeIndexRoute,
+  DashboardLinkTwoIndexRoute: DashboardLinkTwoIndexRoute,
+  DashboardOrganizationSettingsIndexRoute:
+    DashboardOrganizationSettingsIndexRoute,
+  DashboardOrganizationSettingsApiKeysIndexRoute:
+    DashboardOrganizationSettingsApiKeysIndexRoute,
+  DashboardOrganizationSettingsBillingIndexRoute:
+    DashboardOrganizationSettingsBillingIndexRoute,
+  DashboardOrganizationSettingsIntegrationsIndexRoute:
+    DashboardOrganizationSettingsIntegrationsIndexRoute,
+  DashboardOrganizationSettingsTeamIndexRoute:
+    DashboardOrganizationSettingsTeamIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
