@@ -1,0 +1,22 @@
+import { createFileRoute, Outlet } from "@tanstack/react-router";
+import { SidebarInset, SidebarProvider } from "@/_components/ui/sidebar";
+import { DashboardSidebar } from "@/_components/sidebar/DashboardSidebar";
+import { BreadcrumbHeader } from "@/_components/sidebar/BreadcrumbHeader";
+
+export const Route = createFileRoute("/dashboard")({
+  component: LayoutDashboard,
+});
+
+function LayoutDashboard() {
+  return (
+    <SidebarProvider>
+      <DashboardSidebar />
+      <SidebarInset>
+        <BreadcrumbHeader />
+        <div className="max-w-8xl w-full mx-auto flex flex-1 flex-col gap-4 p-6">
+          <Outlet />
+        </div>
+      </SidebarInset>
+    </SidebarProvider>
+  );
+}
