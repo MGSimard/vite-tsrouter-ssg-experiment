@@ -53,7 +53,7 @@ export function DashboardBreadcrumbs() {
             {segments.length > ITEMS_TO_DISPLAY - 1 ? (
               <>
                 <BreadcrumbItem>
-                  <BreadcrumbLink asChild>
+                  <BreadcrumbLink asChild className="max-w-20 truncate md:max-w-none">
                     <Link to={segments[0]!.fullPath}>{segments[0]?.loaderData?.crumb}</Link>
                   </BreadcrumbLink>
                 </BreadcrumbItem>
@@ -104,7 +104,7 @@ export function DashboardBreadcrumbs() {
               segments.map((segment) => (
                 <Fragment key={segment.index}>
                   <BreadcrumbItem>
-                    <BreadcrumbLink asChild>
+                    <BreadcrumbLink asChild className="max-w-20 truncate md:max-w-none">
                       <Link to={segment.fullPath}>{segment.loaderData?.crumb}</Link>
                     </BreadcrumbLink>
                   </BreadcrumbItem>
@@ -114,7 +114,9 @@ export function DashboardBreadcrumbs() {
             )}
             {currentSegment && (
               <BreadcrumbItem>
-                <BreadcrumbPage>{currentSegment?.loaderData?.crumb}</BreadcrumbPage>
+                <BreadcrumbPage className="max-w-20 truncate md:max-w-none">
+                  {currentSegment?.loaderData?.crumb}
+                </BreadcrumbPage>
               </BreadcrumbItem>
             )}
           </BreadcrumbList>
