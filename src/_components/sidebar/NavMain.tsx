@@ -5,7 +5,6 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/_components/ui/sidebar";
-import { Collapsible } from "@/_components/ui/collapsible";
 import { type LucideIcon } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 
