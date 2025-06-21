@@ -56,7 +56,7 @@ export function NavAdmin({
                             <Link
                               to={subItem.url}
                               activeProps={{ "data-active": true }}
-                              activeOptions={{ exact: subItem.activeExact }}>
+                              activeOptions={{ exact: subItem.activeExact, includeSearch: false }}>
                               <span>{subItem.title}</span>
                             </Link>
                           </SidebarMenuSubButton>

@@ -30,7 +30,10 @@ export function NavMain({
         {items.map((item) => (
           <SidebarMenuItem key={item.title}>
             <SidebarMenuButton asChild tooltip={item.title}>
-              <Link to={item.url} activeProps={{ "data-active": true }} activeOptions={{ exact: item.activeExact }}>
+              <Link
+                to={item.url}
+                activeProps={{ "data-active": true }}
+                activeOptions={{ exact: item.activeExact, includeSearch: false }}>
                 <item.icon />
                 <span>{item.title}</span>
               </Link>
