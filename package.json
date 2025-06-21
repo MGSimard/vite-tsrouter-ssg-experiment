@@ -1,5 +1,5 @@
 {
-  "name": ".",
+  "name": "vite-tsrouter-ssg-experiment",
   "private": true,
   "type": "module",
   "scripts": {
