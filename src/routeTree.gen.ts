@@ -19,11 +19,12 @@ import { Route as DashboardLinkTwoIndexRouteImport } from './routes/dashboard/li
 import { Route as DashboardLinkThreeIndexRouteImport } from './routes/dashboard/link-three/index'
 import { Route as DashboardLinkFourIndexRouteImport } from './routes/dashboard/link-four/index'
 import { Route as DashboardLinkFiveIndexRouteImport } from './routes/dashboard/link-five/index'
-import { Route as DashboardOrganizationSettingsTeamIndexRouteImport } from './routes/dashboard/organization-settings/team/index'
-import { Route as DashboardOrganizationSettingsIntegrationsIndexRouteImport } from './routes/dashboard/organization-settings/integrations/index'
-import { Route as DashboardOrganizationSettingsBillingIndexRouteImport } from './routes/dashboard/organization-settings/billing/index'
-import { Route as DashboardOrganizationSettingsApiKeysIndexRouteImport } from './routes/dashboard/organization-settings/api-keys/index'
-import { Route as DashboardOrganizationSettingsBillingNestedTestIndexRouteImport } from './routes/dashboard/organization-settings/billing/nested-test/index'
+import { Route as DashboardOrganizationSettingsTeamRouteImport } from './routes/dashboard/organization-settings/team'
+import { Route as DashboardOrganizationSettingsIntegrationsRouteImport } from './routes/dashboard/organization-settings/integrations'
+import { Route as DashboardOrganizationSettingsBillingRouteImport } from './routes/dashboard/organization-settings/billing'
+import { Route as DashboardOrganizationSettingsApiKeysRouteImport } from './routes/dashboard/organization-settings/api-keys'
+import { Route as DashboardOrganizationSettingsBillingNestedTestRouteImport } from './routes/dashboard/organization-settings/billing.nested-test'
+import { Route as DashboardOrganizationSettingsBillingNestedTestDeepRouteImport } from './routes/dashboard/organization-settings/billing.nested-test.deep'
 
 const DashboardRouteRoute = DashboardRouteRouteImport.update({
   id: '/dashboard',
@@ -76,35 +77,41 @@ const DashboardLinkFiveIndexRoute = DashboardLinkFiveIndexRouteImport.update({
   path: '/link-five/',
   getParentRoute: () => DashboardRouteRoute,
 } as any)
-const DashboardOrganizationSettingsTeamIndexRoute =
-  DashboardOrganizationSettingsTeamIndexRouteImport.update({
-    id: '/organization-settings/team/',
-    path: '/organization-settings/team/',
+const DashboardOrganizationSettingsTeamRoute =
+  DashboardOrganizationSettingsTeamRouteImport.update({
+    id: '/organization-settings/team',
+    path: '/organization-settings/team',
     getParentRoute: () => DashboardRouteRoute,
   } as any)
-const DashboardOrganizationSettingsIntegrationsIndexRoute =
-  DashboardOrganizationSettingsIntegrationsIndexRouteImport.update({
-    id: '/organization-settings/integrations/',
-    path: '/organization-settings/integrations/',
+const DashboardOrganizationSettingsIntegrationsRoute =
+  DashboardOrganizationSettingsIntegrationsRouteImport.update({
+    id: '/organization-settings/integrations',
+    path: '/organization-settings/integrations',
     getParentRoute: () => DashboardRouteRoute,
   } as any)
-const DashboardOrganizationSettingsBillingIndexRoute =
-  DashboardOrganizationSettingsBillingIndexRouteImport.update({
-    id: '/organization-settings/billing/',
-    path: '/organization-settings/billing/',
+const DashboardOrganizationSettingsBillingRoute =
+  DashboardOrganizationSettingsBillingRouteImport.update({
+    id: '/organization-settings/billing',
+    path: '/organization-settings/billing',
     getParentRoute: () => DashboardRouteRoute,
   } as any)
-const DashboardOrganizationSettingsApiKeysIndexRoute =
-  DashboardOrganizationSettingsApiKeysIndexRouteImport.update({
-    id: '/organization-settings/api-keys/',
-    path: '/organization-settings/api-keys/',
+const DashboardOrganizationSettingsApiKeysRoute =
+  DashboardOrganizationSettingsApiKeysRouteImport.update({
+    id: '/organization-settings/api-keys',
+    path: '/organization-settings/api-keys',
     getParentRoute: () => DashboardRouteRoute,
   } as any)
-const DashboardOrganizationSettingsBillingNestedTestIndexRoute =
-  DashboardOrganizationSettingsBillingNestedTestIndexRouteImport.update({
-    id: '/organization-settings/billing/nested-test/',
-    path: '/organization-settings/billing/nested-test/',
-    getParentRoute: () => DashboardRouteRoute,
+const DashboardOrganizationSettingsBillingNestedTestRoute =
+  DashboardOrganizationSettingsBillingNestedTestRouteImport.update({
+    id: '/nested-test',
+    path: '/nested-test',
+    getParentRoute: () => DashboardOrganizationSettingsBillingRoute,
+  } as any)
+const DashboardOrganizationSettingsBillingNestedTestDeepRoute =
+  DashboardOrganizationSettingsBillingNestedTestDeepRouteImport.update({
+    id: '/deep',
+    path: '/deep',
+    getParentRoute: () => DashboardOrganizationSettingsBillingNestedTestRoute,
   } as any)
 
 export interface FileRoutesByFullPath {
@@ -113,32 +120,34 @@ export interface FileRoutesByFullPath {
   '/features': typeof frontFacingFeaturesRoute
   '/': typeof frontFacingIndexRoute
   '/dashboard/': typeof DashboardIndexRoute
+  '/dashboard/organization-settings/api-keys': typeof DashboardOrganizationSettingsApiKeysRoute
+  '/dashboard/organization-settings/billing': typeof DashboardOrganizationSettingsBillingRouteWithChildren
+  '/dashboard/organization-settings/integrations': typeof DashboardOrganizationSettingsIntegrationsRoute
+  '/dashboard/organization-settings/team': typeof DashboardOrganizationSettingsTeamRoute
   '/dashboard/link-five': typeof DashboardLinkFiveIndexRoute
   '/dashboard/link-four': typeof DashboardLinkFourIndexRoute
   '/dashboard/link-three': typeof DashboardLinkThreeIndexRoute
   '/dashboard/link-two': typeof DashboardLinkTwoIndexRoute
   '/dashboard/organization-settings': typeof DashboardOrganizationSettingsIndexRoute
-  '/dashboard/organization-settings/api-keys': typeof DashboardOrganizationSettingsApiKeysIndexRoute
-  '/dashboard/organization-settings/billing': typeof DashboardOrganizationSettingsBillingIndexRoute
-  '/dashboard/organization-settings/integrations': typeof DashboardOrganizationSettingsIntegrationsIndexRoute
-  '/dashboard/organization-settings/team': typeof DashboardOrganizationSettingsTeamIndexRoute
-  '/dashboard/organization-settings/billing/nested-test': typeof DashboardOrganizationSettingsBillingNestedTestIndexRoute
+  '/dashboard/organization-settings/billing/nested-test': typeof DashboardOrganizationSettingsBillingNestedTestRouteWithChildren
+  '/dashboard/organization-settings/billing/nested-test/deep': typeof DashboardOrganizationSettingsBillingNestedTestDeepRoute
 }
 export interface FileRoutesByTo {
   '/about': typeof frontFacingAboutRoute
   '/features': typeof frontFacingFeaturesRoute
   '/': typeof frontFacingIndexRoute
   '/dashboard': typeof DashboardIndexRoute
+  '/dashboard/organization-settings/api-keys': typeof DashboardOrganizationSettingsApiKeysRoute
+  '/dashboard/organization-settings/billing': typeof DashboardOrganizationSettingsBillingRouteWithChildren
+  '/dashboard/organization-settings/integrations': typeof DashboardOrganizationSettingsIntegrationsRoute
+  '/dashboard/organization-settings/team': typeof DashboardOrganizationSettingsTeamRoute
   '/dashboard/link-five': typeof DashboardLinkFiveIndexRoute
   '/dashboard/link-four': typeof DashboardLinkFourIndexRoute
   '/dashboard/link-three': typeof DashboardLinkThreeIndexRoute
   '/dashboard/link-two': typeof DashboardLinkTwoIndexRoute
   '/dashboard/organization-settings': typeof DashboardOrganizationSettingsIndexRoute
-  '/dashboard/organization-settings/api-keys': typeof DashboardOrganizationSettingsApiKeysIndexRoute
-  '/dashboard/organization-settings/billing': typeof DashboardOrganizationSettingsBillingIndexRoute
-  '/dashboard/organization-settings/integrations': typeof DashboardOrganizationSettingsIntegrationsIndexRoute
-  '/dashboard/organization-settings/team': typeof DashboardOrganizationSettingsTeamIndexRoute
-  '/dashboard/organization-settings/billing/nested-test': typeof DashboardOrganizationSettingsBillingNestedTestIndexRoute
+  '/dashboard/organization-settings/billing/nested-test': typeof DashboardOrganizationSettingsBillingNestedTestRouteWithChildren
+  '/dashboard/organization-settings/billing/nested-test/deep': typeof DashboardOrganizationSettingsBillingNestedTestDeepRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -147,16 +156,17 @@ export interface FileRoutesById {
   '/(front-facing)/features': typeof frontFacingFeaturesRoute
   '/(front-facing)/': typeof frontFacingIndexRoute
   '/dashboard/': typeof DashboardIndexRoute
+  '/dashboard/organization-settings/api-keys': typeof DashboardOrganizationSettingsApiKeysRoute
+  '/dashboard/organization-settings/billing': typeof DashboardOrganizationSettingsBillingRouteWithChildren
+  '/dashboard/organization-settings/integrations': typeof DashboardOrganizationSettingsIntegrationsRoute
+  '/dashboard/organization-settings/team': typeof DashboardOrganizationSettingsTeamRoute
   '/dashboard/link-five/': typeof DashboardLinkFiveIndexRoute
   '/dashboard/link-four/': typeof DashboardLinkFourIndexRoute
   '/dashboard/link-three/': typeof DashboardLinkThreeIndexRoute
   '/dashboard/link-two/': typeof DashboardLinkTwoIndexRoute
   '/dashboard/organization-settings/': typeof DashboardOrganizationSettingsIndexRoute
-  '/dashboard/organization-settings/api-keys/': typeof DashboardOrganizationSettingsApiKeysIndexRoute
-  '/dashboard/organization-settings/billing/': typeof DashboardOrganizationSettingsBillingIndexRoute
-  '/dashboard/organization-settings/integrations/': typeof DashboardOrganizationSettingsIntegrationsIndexRoute
-  '/dashboard/organization-settings/team/': typeof DashboardOrganizationSettingsTeamIndexRoute
-  '/dashboard/organization-settings/billing/nested-test/': typeof DashboardOrganizationSettingsBillingNestedTestIndexRoute
+  '/dashboard/organization-settings/billing/nested-test': typeof DashboardOrganizationSettingsBillingNestedTestRouteWithChildren
+  '/dashboard/organization-settings/billing/nested-test/deep': typeof DashboardOrganizationSettingsBillingNestedTestDeepRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -166,32 +176,34 @@ export interface FileRouteTypes {
     | '/features'
     | '/'
     | '/dashboard/'
+    | '/dashboard/organization-settings/api-keys'
+    | '/dashboard/organization-settings/billing'
+    | '/dashboard/organization-settings/integrations'
+    | '/dashboard/organization-settings/team'
     | '/dashboard/link-five'
     | '/dashboard/link-four'
     | '/dashboard/link-three'
     | '/dashboard/link-two'
     | '/dashboard/organization-settings'
-    | '/dashboard/organization-settings/api-keys'
-    | '/dashboard/organization-settings/billing'
-    | '/dashboard/organization-settings/integrations'
-    | '/dashboard/organization-settings/team'
     | '/dashboard/organization-settings/billing/nested-test'
+    | '/dashboard/organization-settings/billing/nested-test/deep'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/about'
     | '/features'
     | '/'
     | '/dashboard'
+    | '/dashboard/organization-settings/api-keys'
+    | '/dashboard/organization-settings/billing'
+    | '/dashboard/organization-settings/integrations'
+    | '/dashboard/organization-settings/team'
     | '/dashboard/link-five'
     | '/dashboard/link-four'
     | '/dashboard/link-three'
     | '/dashboard/link-two'
     | '/dashboard/organization-settings'
-    | '/dashboard/organization-settings/api-keys'
-    | '/dashboard/organization-settings/billing'
-    | '/dashboard/organization-settings/integrations'
-    | '/dashboard/organization-settings/team'
     | '/dashboard/organization-settings/billing/nested-test'
+    | '/dashboard/organization-settings/billing/nested-test/deep'
   id:
     | '__root__'
     | '/dashboard'
@@ -199,16 +211,17 @@ export interface FileRouteTypes {
     | '/(front-facing)/features'
     | '/(front-facing)/'
     | '/dashboard/'
+    | '/dashboard/organization-settings/api-keys'
+    | '/dashboard/organization-settings/billing'
+    | '/dashboard/organization-settings/integrations'
+    | '/dashboard/organization-settings/team'
     | '/dashboard/link-five/'
     | '/dashboard/link-four/'
     | '/dashboard/link-three/'
     | '/dashboard/link-two/'
     | '/dashboard/organization-settings/'
-    | '/dashboard/organization-settings/api-keys/'
-    | '/dashboard/organization-settings/billing/'
-    | '/dashboard/organization-settings/integrations/'
-    | '/dashboard/organization-settings/team/'
-    | '/dashboard/organization-settings/billing/nested-test/'
+    | '/dashboard/organization-settings/billing/nested-test'
+    | '/dashboard/organization-settings/billing/nested-test/deep'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -290,76 +303,110 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DashboardLinkFiveIndexRouteImport
       parentRoute: typeof DashboardRouteRoute
     }
-    '/dashboard/organization-settings/team/': {
-      id: '/dashboard/organization-settings/team/'
+    '/dashboard/organization-settings/team': {
+      id: '/dashboard/organization-settings/team'
       path: '/organization-settings/team'
       fullPath: '/dashboard/organization-settings/team'
-      preLoaderRoute: typeof DashboardOrganizationSettingsTeamIndexRouteImport
+      preLoaderRoute: typeof DashboardOrganizationSettingsTeamRouteImport
       parentRoute: typeof DashboardRouteRoute
     }
-    '/dashboard/organization-settings/integrations/': {
-      id: '/dashboard/organization-settings/integrations/'
+    '/dashboard/organization-settings/integrations': {
+      id: '/dashboard/organization-settings/integrations'
       path: '/organization-settings/integrations'
       fullPath: '/dashboard/organization-settings/integrations'
-      preLoaderRoute: typeof DashboardOrganizationSettingsIntegrationsIndexRouteImport
+      preLoaderRoute: typeof DashboardOrganizationSettingsIntegrationsRouteImport
       parentRoute: typeof DashboardRouteRoute
     }
-    '/dashboard/organization-settings/billing/': {
-      id: '/dashboard/organization-settings/billing/'
+    '/dashboard/organization-settings/billing': {
+      id: '/dashboard/organization-settings/billing'
       path: '/organization-settings/billing'
       fullPath: '/dashboard/organization-settings/billing'
-      preLoaderRoute: typeof DashboardOrganizationSettingsBillingIndexRouteImport
+      preLoaderRoute: typeof DashboardOrganizationSettingsBillingRouteImport
       parentRoute: typeof DashboardRouteRoute
     }
-    '/dashboard/organization-settings/api-keys/': {
-      id: '/dashboard/organization-settings/api-keys/'
+    '/dashboard/organization-settings/api-keys': {
+      id: '/dashboard/organization-settings/api-keys'
       path: '/organization-settings/api-keys'
       fullPath: '/dashboard/organization-settings/api-keys'
-      preLoaderRoute: typeof DashboardOrganizationSettingsApiKeysIndexRouteImport
+      preLoaderRoute: typeof DashboardOrganizationSettingsApiKeysRouteImport
       parentRoute: typeof DashboardRouteRoute
     }
-    '/dashboard/organization-settings/billing/nested-test/': {
-      id: '/dashboard/organization-settings/billing/nested-test/'
-      path: '/organization-settings/billing/nested-test'
+    '/dashboard/organization-settings/billing/nested-test': {
+      id: '/dashboard/organization-settings/billing/nested-test'
+      path: '/nested-test'
       fullPath: '/dashboard/organization-settings/billing/nested-test'
-      preLoaderRoute: typeof DashboardOrganizationSettingsBillingNestedTestIndexRouteImport
-      parentRoute: typeof DashboardRouteRoute
+      preLoaderRoute: typeof DashboardOrganizationSettingsBillingNestedTestRouteImport
+      parentRoute: typeof DashboardOrganizationSettingsBillingRoute
+    }
+    '/dashboard/organization-settings/billing/nested-test/deep': {
+      id: '/dashboard/organization-settings/billing/nested-test/deep'
+      path: '/deep'
+      fullPath: '/dashboard/organization-settings/billing/nested-test/deep'
+      preLoaderRoute: typeof DashboardOrganizationSettingsBillingNestedTestDeepRouteImport
+      parentRoute: typeof DashboardOrganizationSettingsBillingNestedTestRoute
     }
   }
 }
 
+interface DashboardOrganizationSettingsBillingNestedTestRouteChildren {
+  DashboardOrganizationSettingsBillingNestedTestDeepRoute: typeof DashboardOrganizationSettingsBillingNestedTestDeepRoute
+}
+
+const DashboardOrganizationSettingsBillingNestedTestRouteChildren: DashboardOrganizationSettingsBillingNestedTestRouteChildren =
+  {
+    DashboardOrganizationSettingsBillingNestedTestDeepRoute:
+      DashboardOrganizationSettingsBillingNestedTestDeepRoute,
+  }
+
+const DashboardOrganizationSettingsBillingNestedTestRouteWithChildren =
+  DashboardOrganizationSettingsBillingNestedTestRoute._addFileChildren(
+    DashboardOrganizationSettingsBillingNestedTestRouteChildren,
+  )
+
+interface DashboardOrganizationSettingsBillingRouteChildren {
+  DashboardOrganizationSettingsBillingNestedTestRoute: typeof DashboardOrganizationSettingsBillingNestedTestRouteWithChildren
+}
+
+const DashboardOrganizationSettingsBillingRouteChildren: DashboardOrganizationSettingsBillingRouteChildren =
+  {
+    DashboardOrganizationSettingsBillingNestedTestRoute:
+      DashboardOrganizationSettingsBillingNestedTestRouteWithChildren,
+  }
+
+const DashboardOrganizationSettingsBillingRouteWithChildren =
+  DashboardOrganizationSettingsBillingRoute._addFileChildren(
+    DashboardOrganizationSettingsBillingRouteChildren,
+  )
+
 interface DashboardRouteRouteChildren {
   DashboardIndexRoute: typeof DashboardIndexRoute
+  DashboardOrganizationSettingsApiKeysRoute: typeof DashboardOrganizationSettingsApiKeysRoute
+  DashboardOrganizationSettingsBillingRoute: typeof DashboardOrganizationSettingsBillingRouteWithChildren
+  DashboardOrganizationSettingsIntegrationsRoute: typeof DashboardOrganizationSettingsIntegrationsRoute
+  DashboardOrganizationSettingsTeamRoute: typeof DashboardOrganizationSettingsTeamRoute
   DashboardLinkFiveIndexRoute: typeof DashboardLinkFiveIndexRoute
   DashboardLinkFourIndexRoute: typeof DashboardLinkFourIndexRoute
   DashboardLinkThreeIndexRoute: typeof DashboardLinkThreeIndexRoute
   DashboardLinkTwoIndexRoute: typeof DashboardLinkTwoIndexRoute
   DashboardOrganizationSettingsIndexRoute: typeof DashboardOrganizationSettingsIndexRoute
-  DashboardOrganizationSettingsApiKeysIndexRoute: typeof DashboardOrganizationSettingsApiKeysIndexRoute
-  DashboardOrganizationSettingsBillingIndexRoute: typeof DashboardOrganizationSettingsBillingIndexRoute
-  DashboardOrganizationSettingsIntegrationsIndexRoute: typeof DashboardOrganizationSettingsIntegrationsIndexRoute
-  DashboardOrganizationSettingsTeamIndexRoute: typeof DashboardOrganizationSettingsTeamIndexRoute
-  DashboardOrganizationSettingsBillingNestedTestIndexRoute: typeof DashboardOrganizationSettingsBillingNestedTestIndexRoute
 }
 
 const DashboardRouteRouteChildren: DashboardRouteRouteChildren = {
   DashboardIndexRoute: DashboardIndexRoute,
+  DashboardOrganizationSettingsApiKeysRoute:
+    DashboardOrganizationSettingsApiKeysRoute,
+  DashboardOrganizationSettingsBillingRoute:
+    DashboardOrganizationSettingsBillingRouteWithChildren,
+  DashboardOrganizationSettingsIntegrationsRoute:
+    DashboardOrganizationSettingsIntegrationsRoute,
+  DashboardOrganizationSettingsTeamRoute:
+    DashboardOrganizationSettingsTeamRoute,
   DashboardLinkFiveIndexRoute: DashboardLinkFiveIndexRoute,
   DashboardLinkFourIndexRoute: DashboardLinkFourIndexRoute,
   DashboardLinkThreeIndexRoute: DashboardLinkThreeIndexRoute,
   DashboardLinkTwoIndexRoute: DashboardLinkTwoIndexRoute,
   DashboardOrganizationSettingsIndexRoute:
     DashboardOrganizationSettingsIndexRoute,
-  DashboardOrganizationSettingsApiKeysIndexRoute:
-    DashboardOrganizationSettingsApiKeysIndexRoute,
-  DashboardOrganizationSettingsBillingIndexRoute:
-    DashboardOrganizationSettingsBillingIndexRoute,
-  DashboardOrganizationSettingsIntegrationsIndexRoute:
-    DashboardOrganizationSettingsIntegrationsIndexRoute,
-  DashboardOrganizationSettingsTeamIndexRoute:
-    DashboardOrganizationSettingsTeamIndexRoute,
-  DashboardOrganizationSettingsBillingNestedTestIndexRoute:
-    DashboardOrganizationSettingsBillingNestedTestIndexRoute,
 }
 
 const DashboardRouteRouteWithChildren = DashboardRouteRoute._addFileChildren(
