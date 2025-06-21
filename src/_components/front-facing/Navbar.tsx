@@ -19,8 +19,8 @@ export function Navbar() {
     <header className="sticky top-0 w-full z-50 border-b bg-background/40  backdrop-blur-sm">
       <div className="max-w-8xl mx-auto flex justify-between items-center gap-4 px-6 py-4">
         <nav className="flex items-center gap-4">
-          <Link to="/">
-            <Bolt className="w-6 h-6 text-primary" />
+          <Link to="/" activeProps={{ className: "text-primary" }}>
+            <Bolt className="w-6 h-6" />
           </Link>
           <ul className="flex items-center gap-4">
             {NAV_LINKS.map((link) => (
