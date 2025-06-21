@@ -13,9 +13,7 @@ import {
   DropdownMenuTrigger,
 } from "@/_components/ui/dropdown-menu";
 import { MoreHorizontal, type LucideIcon } from "lucide-react";
-import { Link, useLocation } from "@tanstack/react-router";
-
-// TODO: Think about adding muted text for active subpage
+import { Link } from "@tanstack/react-router";
 
 export function NavAdmin({
   items,
@@ -32,37 +30,19 @@ export function NavAdmin({
   }[];
 }) {
   const { isMobile } = useSidebar();
-  const location = useLocation();
-
-  // Get immediate active subpage (General, Team, Billing, etc.)
-  const getActiveSubpage = (item: (typeof items)[0]) => {
-    if (!item.items) return null;
-    const basePath = item.url;
-    const relativePath = location.pathname.replace(basePath, "").replace(/^\//, "");
-    const immediateSection = relativePath.split("/")[0];
-    if (!immediateSection) {
-      return item.items.find((sub) => sub.activeExact);
-    }
-    return item.items.find((sub) => sub.url.endsWith(`/${immediateSection}`));
-  };
 
   return (
     <SidebarGroup>
       <SidebarGroupLabel>Admin</SidebarGroupLabel>
       <SidebarMenu>
         {items.map((item) => {
-          const activeSubpage = getActiveSubpage(item);
-
           return (
             <DropdownMenu key={item.title}>
               <SidebarMenuItem>
                 <DropdownMenuTrigger asChild>
                   <SidebarMenuButton className="cursor-pointer data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground">
                     <item.icon />
-                    <span className="flex items-center gap-2">
-                      {item.title}
-                      {activeSubpage && <span className="text-xs text-muted-foreground">• {activeSubpage.title}</span>}
-                    </span>
+                    {item.title}
                     <MoreHorizontal className="ml-auto" />
                   </SidebarMenuButton>
                 </DropdownMenuTrigger>
