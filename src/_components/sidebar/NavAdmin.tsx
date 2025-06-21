@@ -2,16 +2,18 @@ import {
   SidebarGroup,
   SidebarGroupLabel,
   SidebarMenu,
-  SidebarMenuAction,
   SidebarMenuButton,
   SidebarMenuItem,
-  SidebarMenuSub,
-  SidebarMenuSubButton,
-  SidebarMenuSubItem,
+  useSidebar,
 } from "@/_components/ui/sidebar";
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/_components/ui/collapsible";
-import { ChevronRight, type LucideIcon } from "lucide-react";
-import { Link, useMatchRoute } from "@tanstack/react-router";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/_components/ui/dropdown-menu";
+import { MoreHorizontal, type LucideIcon } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 
 export function NavAdmin({
   items,
@@ -23,49 +25,45 @@ export function NavAdmin({
     items?: {
       title: string;
       url: string;
-      activeExact?: boolean;
     }[];
   }[];
 }) {
-  const matchRoute = useMatchRoute();
+  const { isMobile } = useSidebar();
 
   return (
     <SidebarGroup>
       <SidebarGroupLabel>Admin</SidebarGroupLabel>
       <SidebarMenu>
-        {items.map((item) => {
-          const isRouteActive = !!matchRoute({ to: item.url, fuzzy: true });
-
-          return (
-            <Collapsible key={item.title} asChild defaultOpen={isRouteActive} className="group/collapsible">
-              <SidebarMenuItem>
-                <CollapsibleTrigger asChild>
-                  <SidebarMenuButton tooltip={item.title}>
-                    {item.icon && <item.icon />}
-                    <span>{item.title}</span>
-                    <ChevronRight className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />
-                  </SidebarMenuButton>
-                </CollapsibleTrigger>
-                <CollapsibleContent>
-                  <SidebarMenuSub>
-                    {item.items?.map((subItem) => (
-                      <SidebarMenuSubItem key={subItem.title}>
-                        <SidebarMenuSubButton asChild>
-                          <Link
-                            to={subItem.url}
-                            activeProps={{ "data-active": true }}
-                            activeOptions={{ exact: subItem.activeExact, includeSearch: false }}>
-                            <span>{subItem.title}</span>
-                          </Link>
-                        </SidebarMenuSubButton>
-                      </SidebarMenuSubItem>
-                    ))}
-                  </SidebarMenuSub>
-                </CollapsibleContent>
-              </SidebarMenuItem>
-            </Collapsible>
-          );
-        })}
+        {items.map((item) => (
+          <DropdownMenu key={item.title}>
+            <SidebarMenuItem>
+              <DropdownMenuTrigger asChild>
+                <SidebarMenuButton className="cursor-pointer data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground">
+                  <item.icon /> {item.title} <MoreHorizontal className="ml-auto" />
+                </SidebarMenuButton>
+              </DropdownMenuTrigger>
+              {item.items?.length ? (
+                <DropdownMenuContent
+                  side={isMobile ? "bottom" : "right"}
+                  align={isMobile ? "end" : "start"}
+                  className="min-w-56 rounded-lg">
+                  {item.items.map((item) => (
+                    <DropdownMenuItem asChild key={item.title}>
+                      <Link
+                        to={item.url}
+                        className="cursor-pointer"
+                        activeProps={{
+                          className: "bg-sidebar-accent font-medium text-sidebar-accent-foreground",
+                        }}>
+                        {item.title}
+                      </Link>
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              ) : null}
+            </SidebarMenuItem>
+          </DropdownMenu>
+        ))}
       </SidebarMenu>
     </SidebarGroup>
   );
