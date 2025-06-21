@@ -15,6 +15,8 @@ import {
 import { MoreHorizontal, type LucideIcon } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 
+// TODO: Think about adding muted text for active subpage
+
 export function NavAdmin({
   items,
 }: {
@@ -25,6 +27,7 @@ export function NavAdmin({
     items?: {
       title: string;
       url: string;
+      activeExact?: boolean;
     }[];
   }[];
 }) {
@@ -54,7 +57,8 @@ export function NavAdmin({
                         className="cursor-pointer"
                         activeProps={{
                           className: "bg-sidebar-accent font-medium text-sidebar-accent-foreground",
-                        }}>
+                        }}
+                        activeOptions={{ exact: item.activeExact, includeSearch: false }}>
                         {item.title}
                       </Link>
                     </DropdownMenuItem>
