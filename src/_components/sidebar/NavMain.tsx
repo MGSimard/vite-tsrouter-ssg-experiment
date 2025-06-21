@@ -16,7 +16,7 @@ export function NavMain({
     title: string;
     url: string;
     icon: LucideIcon;
-    isActive?: boolean;
+    activeExact?: boolean;
     items?: {
       title: string;
       url: string;
@@ -29,8 +29,8 @@ export function NavMain({
       <SidebarMenu>
         {items.map((item) => (
           <SidebarMenuItem key={item.title}>
-            <SidebarMenuButton asChild tooltip={item.title} isActive={item.isActive}>
-              <Link to={item.url}>
+            <SidebarMenuButton asChild tooltip={item.title}>
+              <Link to={item.url} activeProps={{ "data-active": true }} activeOptions={{ exact: item.activeExact }}>
                 <item.icon />
                 <span>{item.title}</span>
               </Link>

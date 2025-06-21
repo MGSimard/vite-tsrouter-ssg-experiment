@@ -20,11 +20,10 @@ export function NavAdmin({
     title: string;
     url: string;
     icon: LucideIcon;
-    isActive?: boolean;
     items?: {
       title: string;
       url: string;
-      isActive?: boolean;
+      activeExact?: boolean;
     }[];
   }[];
 }) {
@@ -33,10 +32,10 @@ export function NavAdmin({
       <SidebarGroupLabel>Admin</SidebarGroupLabel>
       <SidebarMenu>
         {items.map((item) => (
-          <Collapsible key={item.title} asChild defaultOpen={item.isActive}>
+          <Collapsible key={item.title} asChild defaultOpen={true}>
             <SidebarMenuItem>
-              <SidebarMenuButton asChild tooltip={item.title} isActive={item.isActive}>
-                <Link to={item.url}>
+              <SidebarMenuButton asChild tooltip={item.title}>
+                <Link to={item.url} activeProps={{ "data-active": true }}>
                   <item.icon />
                   <span>{item.title}</span>
                 </Link>
@@ -53,8 +52,11 @@ export function NavAdmin({
                     <SidebarMenuSub>
                       {item.items?.map((subItem) => (
                         <SidebarMenuSubItem key={subItem.title}>
-                          <SidebarMenuSubButton asChild isActive={subItem.isActive}>
-                            <Link to={subItem.url}>
+                          <SidebarMenuSubButton asChild>
+                            <Link
+                              to={subItem.url}
+                              activeProps={{ "data-active": true }}
+                              activeOptions={{ exact: subItem.activeExact }}>
                               <span>{subItem.title}</span>
                             </Link>
                           </SidebarMenuSubButton>

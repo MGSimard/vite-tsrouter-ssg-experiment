@@ -11,6 +11,7 @@ const NAV_LINKS = {
       title: "Overview",
       url: "/dashboard",
       icon: Gauge,
+      activeExact: true,
     },
     {
       title: "Link Two",
@@ -42,6 +43,7 @@ const NAV_LINKS = {
         {
           title: "General",
           url: "/dashboard/organization-settings",
+          activeExact: true,
         },
         {
           title: "Team",
