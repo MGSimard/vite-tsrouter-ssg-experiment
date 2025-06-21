@@ -18,6 +18,7 @@ import { Route as DashboardOrganizationSettingsIndexRouteImport } from './routes
 import { Route as DashboardLinkTwoIndexRouteImport } from './routes/dashboard/link-two/index'
 import { Route as DashboardLinkThreeIndexRouteImport } from './routes/dashboard/link-three/index'
 import { Route as DashboardLinkFourIndexRouteImport } from './routes/dashboard/link-four/index'
+import { Route as DashboardLinkFiveIndexRouteImport } from './routes/dashboard/link-five/index'
 import { Route as DashboardOrganizationSettingsTeamIndexRouteImport } from './routes/dashboard/organization-settings/team/index'
 import { Route as DashboardOrganizationSettingsIntegrationsIndexRouteImport } from './routes/dashboard/organization-settings/integrations/index'
 import { Route as DashboardOrganizationSettingsBillingIndexRouteImport } from './routes/dashboard/organization-settings/billing/index'
@@ -70,6 +71,11 @@ const DashboardLinkFourIndexRoute = DashboardLinkFourIndexRouteImport.update({
   path: '/link-four/',
   getParentRoute: () => DashboardRouteRoute,
 } as any)
+const DashboardLinkFiveIndexRoute = DashboardLinkFiveIndexRouteImport.update({
+  id: '/link-five/',
+  path: '/link-five/',
+  getParentRoute: () => DashboardRouteRoute,
+} as any)
 const DashboardOrganizationSettingsTeamIndexRoute =
   DashboardOrganizationSettingsTeamIndexRouteImport.update({
     id: '/organization-settings/team/',
@@ -107,6 +113,7 @@ export interface FileRoutesByFullPath {
   '/features': typeof frontFacingFeaturesRoute
   '/': typeof frontFacingIndexRoute
   '/dashboard/': typeof DashboardIndexRoute
+  '/dashboard/link-five': typeof DashboardLinkFiveIndexRoute
   '/dashboard/link-four': typeof DashboardLinkFourIndexRoute
   '/dashboard/link-three': typeof DashboardLinkThreeIndexRoute
   '/dashboard/link-two': typeof DashboardLinkTwoIndexRoute
@@ -122,6 +129,7 @@ export interface FileRoutesByTo {
   '/features': typeof frontFacingFeaturesRoute
   '/': typeof frontFacingIndexRoute
   '/dashboard': typeof DashboardIndexRoute
+  '/dashboard/link-five': typeof DashboardLinkFiveIndexRoute
   '/dashboard/link-four': typeof DashboardLinkFourIndexRoute
   '/dashboard/link-three': typeof DashboardLinkThreeIndexRoute
   '/dashboard/link-two': typeof DashboardLinkTwoIndexRoute
@@ -139,6 +147,7 @@ export interface FileRoutesById {
   '/(front-facing)/features': typeof frontFacingFeaturesRoute
   '/(front-facing)/': typeof frontFacingIndexRoute
   '/dashboard/': typeof DashboardIndexRoute
+  '/dashboard/link-five/': typeof DashboardLinkFiveIndexRoute
   '/dashboard/link-four/': typeof DashboardLinkFourIndexRoute
   '/dashboard/link-three/': typeof DashboardLinkThreeIndexRoute
   '/dashboard/link-two/': typeof DashboardLinkTwoIndexRoute
@@ -157,6 +166,7 @@ export interface FileRouteTypes {
     | '/features'
     | '/'
     | '/dashboard/'
+    | '/dashboard/link-five'
     | '/dashboard/link-four'
     | '/dashboard/link-three'
     | '/dashboard/link-two'
@@ -172,6 +182,7 @@ export interface FileRouteTypes {
     | '/features'
     | '/'
     | '/dashboard'
+    | '/dashboard/link-five'
     | '/dashboard/link-four'
     | '/dashboard/link-three'
     | '/dashboard/link-two'
@@ -188,6 +199,7 @@ export interface FileRouteTypes {
     | '/(front-facing)/features'
     | '/(front-facing)/'
     | '/dashboard/'
+    | '/dashboard/link-five/'
     | '/dashboard/link-four/'
     | '/dashboard/link-three/'
     | '/dashboard/link-two/'
@@ -271,6 +283,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DashboardLinkFourIndexRouteImport
       parentRoute: typeof DashboardRouteRoute
     }
+    '/dashboard/link-five/': {
+      id: '/dashboard/link-five/'
+      path: '/link-five'
+      fullPath: '/dashboard/link-five'
+      preLoaderRoute: typeof DashboardLinkFiveIndexRouteImport
+      parentRoute: typeof DashboardRouteRoute
+    }
     '/dashboard/organization-settings/team/': {
       id: '/dashboard/organization-settings/team/'
       path: '/organization-settings/team'
@@ -311,6 +330,7 @@ declare module '@tanstack/react-router' {
 
 interface DashboardRouteRouteChildren {
   DashboardIndexRoute: typeof DashboardIndexRoute
+  DashboardLinkFiveIndexRoute: typeof DashboardLinkFiveIndexRoute
   DashboardLinkFourIndexRoute: typeof DashboardLinkFourIndexRoute
   DashboardLinkThreeIndexRoute: typeof DashboardLinkThreeIndexRoute
   DashboardLinkTwoIndexRoute: typeof DashboardLinkTwoIndexRoute
@@ -324,6 +344,7 @@ interface DashboardRouteRouteChildren {
 
 const DashboardRouteRouteChildren: DashboardRouteRouteChildren = {
   DashboardIndexRoute: DashboardIndexRoute,
+  DashboardLinkFiveIndexRoute: DashboardLinkFiveIndexRoute,
   DashboardLinkFourIndexRoute: DashboardLinkFourIndexRoute,
   DashboardLinkThreeIndexRoute: DashboardLinkThreeIndexRoute,
   DashboardLinkTwoIndexRoute: DashboardLinkTwoIndexRoute,

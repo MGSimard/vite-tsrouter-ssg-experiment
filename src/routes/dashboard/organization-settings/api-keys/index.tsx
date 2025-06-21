@@ -1,11 +1,10 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute } from "@tanstack/react-router";
 
-export const Route = createFileRoute(
-  '/dashboard/organization-settings/api-keys/',
-)({
+export const Route = createFileRoute("/dashboard/organization-settings/api-keys/")({
   component: RouteComponent,
-})
+  loader: () => ({ crumb: "API Keys" }),
+});
 
 function RouteComponent() {
-  return <div>Hello "/dashboard/organization-settings/api-keys/"!</div>
+  return <div>Hello "/dashboard/organization-settings/api-keys/"!</div>;
 }
