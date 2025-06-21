@@ -10,7 +10,7 @@ function RouteComponent() {
   return (
     <>
       <Navbar />
-      <main className="max-w-8xl w-full grow mx-auto flex flex-1 flex-col gap-4 p-6">
+      <main className="w-full mx-auto flex grow flex-col">
         <Outlet />
       </main>
       <Footer />

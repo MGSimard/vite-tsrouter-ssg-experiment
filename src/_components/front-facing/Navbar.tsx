@@ -16,7 +16,7 @@ const NAV_LINKS = [
 
 export function Navbar() {
   return (
-    <header className="sticky top-0 w-full z-50 border-b bg-background/40  backdrop-blur-sm">
+    <header className="fixed top-0 w-full z-50 border-b bg-background/40  backdrop-blur-sm">
       <div className="max-w-8xl mx-auto flex justify-between items-center gap-4 px-6 py-4">
         <nav className="flex items-center gap-4">
           <Link to="/" activeProps={{ className: "text-primary" }}>
@@ -34,8 +34,7 @@ export function Navbar() {
         </nav>
         <div className="flex items-center gap-4">
           <ToggleTheme />
-          <Button variant="secondary">Sign in</Button>
-          <Button variant="default">Sign up</Button>
+          <Button>Access</Button>
         </div>
       </div>
     </header>

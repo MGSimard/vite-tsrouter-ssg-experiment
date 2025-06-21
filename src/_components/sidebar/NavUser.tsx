@@ -1,4 +1,4 @@
-import { ChevronsUpDown, LogOut, Settings2 } from "lucide-react";
+import { ChevronsUpDown, LifeBuoy, LogOut, Settings2 } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/_components/ui/avatar";
 import {
   DropdownMenu,
@@ -59,6 +59,11 @@ export function NavUser() {
             <DropdownMenuItem>
               <Settings2 />
               Account Settings
+            </DropdownMenuItem>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem>
+              <LifeBuoy />
+              Help Center
             </DropdownMenuItem>
             <DropdownMenuSeparator />
             <DropdownMenuItem>

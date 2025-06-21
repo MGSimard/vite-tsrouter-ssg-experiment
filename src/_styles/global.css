@@ -127,6 +127,26 @@
   max-width: 1440px; /* 90rem = 1440px */
 }
 
-/* * {
+.heading-effect {
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-image: linear-gradient(to right, var(--color-primary) 0%, var(--chart-5) 50%, var(--color-primary) 100%);
+  background-size: 300% 100%;
+  padding-right: 2px;
+  animation: highlight 8s ease-in-out infinite;
+  position: relative;
+}
+@keyframes highlight {
+  0%,
+  to {
+    background-position: 0;
+  }
+  50% {
+    background-position: 100%;
+  }
+}
+/* 
+* {
   outline: 1px solid red;
 } */
