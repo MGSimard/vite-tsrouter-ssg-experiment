@@ -3,7 +3,15 @@ import { NavTeam } from "@/_components/sidebar/NavTeam";
 import { NavMain } from "@/_components/sidebar/NavMain";
 import { NavAdmin } from "@/_components/sidebar/NavAdmin";
 import { NavUser } from "@/_components/sidebar/NavUser";
-import { Activity, ChartNoAxesColumnIncreasing, Gauge, Settings, ShieldCheck, Target } from "lucide-react";
+import {
+  Activity,
+  AppWindowMac,
+  ChartNoAxesColumnIncreasing,
+  Gauge,
+  Settings,
+  ShieldCheck,
+  Target,
+} from "lucide-react";
 
 const NAV_LINKS = {
   navMain: [
@@ -32,6 +40,11 @@ const NAV_LINKS = {
       title: "Link Five",
       url: "/dashboard/link-five",
       icon: ShieldCheck,
+    },
+    {
+      title: "The Thing",
+      url: "/dashboard/The Thing",
+      icon: AppWindowMac,
     },
   ],
   admin: [

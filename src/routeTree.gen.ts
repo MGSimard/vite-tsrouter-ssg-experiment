@@ -21,6 +21,7 @@ import { Route as DashboardLinkTwoIndexRouteImport } from './routes/dashboard/li
 import { Route as DashboardLinkThreeIndexRouteImport } from './routes/dashboard/link-three/index'
 import { Route as DashboardLinkFourIndexRouteImport } from './routes/dashboard/link-four/index'
 import { Route as DashboardLinkFiveIndexRouteImport } from './routes/dashboard/link-five/index'
+import { Route as DashboardTheThingIndexRouteImport } from './routes/dashboard/The Thing/index'
 import { Route as DashboardOrganizationSettingsTeamRouteImport } from './routes/dashboard/organization-settings/team'
 import { Route as DashboardOrganizationSettingsIntegrationsRouteImport } from './routes/dashboard/organization-settings/integrations'
 import { Route as DashboardOrganizationSettingsBillingRouteImport } from './routes/dashboard/organization-settings/billing'
@@ -89,6 +90,11 @@ const DashboardLinkFiveIndexRoute = DashboardLinkFiveIndexRouteImport.update({
   path: '/link-five/',
   getParentRoute: () => DashboardRouteRoute,
 } as any)
+const DashboardTheThingIndexRoute = DashboardTheThingIndexRouteImport.update({
+  id: '/The Thing/',
+  path: '/The Thing/',
+  getParentRoute: () => DashboardRouteRoute,
+} as any)
 const DashboardOrganizationSettingsTeamRoute =
   DashboardOrganizationSettingsTeamRouteImport.update({
     id: '/team',
@@ -137,6 +143,7 @@ export interface FileRoutesByFullPath {
   '/dashboard/organization-settings/billing': typeof DashboardOrganizationSettingsBillingRouteWithChildren
   '/dashboard/organization-settings/integrations': typeof DashboardOrganizationSettingsIntegrationsRoute
   '/dashboard/organization-settings/team': typeof DashboardOrganizationSettingsTeamRoute
+  '/dashboard/The Thing': typeof DashboardTheThingIndexRoute
   '/dashboard/link-five': typeof DashboardLinkFiveIndexRoute
   '/dashboard/link-four': typeof DashboardLinkFourIndexRoute
   '/dashboard/link-three': typeof DashboardLinkThreeIndexRoute
@@ -154,6 +161,7 @@ export interface FileRoutesByTo {
   '/dashboard/organization-settings/billing': typeof DashboardOrganizationSettingsBillingRouteWithChildren
   '/dashboard/organization-settings/integrations': typeof DashboardOrganizationSettingsIntegrationsRoute
   '/dashboard/organization-settings/team': typeof DashboardOrganizationSettingsTeamRoute
+  '/dashboard/The Thing': typeof DashboardTheThingIndexRoute
   '/dashboard/link-five': typeof DashboardLinkFiveIndexRoute
   '/dashboard/link-four': typeof DashboardLinkFourIndexRoute
   '/dashboard/link-three': typeof DashboardLinkThreeIndexRoute
@@ -175,6 +183,7 @@ export interface FileRoutesById {
   '/dashboard/organization-settings/billing': typeof DashboardOrganizationSettingsBillingRouteWithChildren
   '/dashboard/organization-settings/integrations': typeof DashboardOrganizationSettingsIntegrationsRoute
   '/dashboard/organization-settings/team': typeof DashboardOrganizationSettingsTeamRoute
+  '/dashboard/The Thing/': typeof DashboardTheThingIndexRoute
   '/dashboard/link-five/': typeof DashboardLinkFiveIndexRoute
   '/dashboard/link-four/': typeof DashboardLinkFourIndexRoute
   '/dashboard/link-three/': typeof DashboardLinkThreeIndexRoute
@@ -196,6 +205,7 @@ export interface FileRouteTypes {
     | '/dashboard/organization-settings/billing'
     | '/dashboard/organization-settings/integrations'
     | '/dashboard/organization-settings/team'
+    | '/dashboard/The Thing'
     | '/dashboard/link-five'
     | '/dashboard/link-four'
     | '/dashboard/link-three'
@@ -213,6 +223,7 @@ export interface FileRouteTypes {
     | '/dashboard/organization-settings/billing'
     | '/dashboard/organization-settings/integrations'
     | '/dashboard/organization-settings/team'
+    | '/dashboard/The Thing'
     | '/dashboard/link-five'
     | '/dashboard/link-four'
     | '/dashboard/link-three'
@@ -233,6 +244,7 @@ export interface FileRouteTypes {
     | '/dashboard/organization-settings/billing'
     | '/dashboard/organization-settings/integrations'
     | '/dashboard/organization-settings/team'
+    | '/dashboard/The Thing/'
     | '/dashboard/link-five/'
     | '/dashboard/link-four/'
     | '/dashboard/link-three/'
@@ -331,6 +343,13 @@ declare module '@tanstack/react-router' {
       path: '/link-five'
       fullPath: '/dashboard/link-five'
       preLoaderRoute: typeof DashboardLinkFiveIndexRouteImport
+      parentRoute: typeof DashboardRouteRoute
+    }
+    '/dashboard/The Thing/': {
+      id: '/dashboard/The Thing/'
+      path: '/The Thing'
+      fullPath: '/dashboard/The Thing'
+      preLoaderRoute: typeof DashboardTheThingIndexRouteImport
       parentRoute: typeof DashboardRouteRoute
     }
     '/dashboard/organization-settings/team': {
@@ -453,6 +472,7 @@ const DashboardOrganizationSettingsRouteRouteWithChildren =
 interface DashboardRouteRouteChildren {
   DashboardOrganizationSettingsRouteRoute: typeof DashboardOrganizationSettingsRouteRouteWithChildren
   DashboardIndexRoute: typeof DashboardIndexRoute
+  DashboardTheThingIndexRoute: typeof DashboardTheThingIndexRoute
   DashboardLinkFiveIndexRoute: typeof DashboardLinkFiveIndexRoute
   DashboardLinkFourIndexRoute: typeof DashboardLinkFourIndexRoute
   DashboardLinkThreeIndexRoute: typeof DashboardLinkThreeIndexRoute
@@ -463,6 +483,7 @@ const DashboardRouteRouteChildren: DashboardRouteRouteChildren = {
   DashboardOrganizationSettingsRouteRoute:
     DashboardOrganizationSettingsRouteRouteWithChildren,
   DashboardIndexRoute: DashboardIndexRoute,
+  DashboardTheThingIndexRoute: DashboardTheThingIndexRoute,
   DashboardLinkFiveIndexRoute: DashboardLinkFiveIndexRoute,
   DashboardLinkFourIndexRoute: DashboardLinkFourIndexRoute,
   DashboardLinkThreeIndexRoute: DashboardLinkThreeIndexRoute,
