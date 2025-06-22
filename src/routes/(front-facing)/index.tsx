@@ -26,6 +26,12 @@ function App() {
           </div>
         </div>
       </section>
+      <section className="flex flex-col">
+        <div className="max-w-8xl w-full p-6 mx-auto flex flex-col">
+          <h2>Section 2</h2>
+          <p>Section content</p>
+        </div>
+      </section>
     </>
   );
 }
