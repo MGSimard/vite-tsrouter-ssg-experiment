@@ -61,7 +61,7 @@ export function NavTeam({
                     <span className="truncate font-medium">{organization.name}</span>
                     <span className="truncate text-xs">{organization.plan}</span>
                   </div>
-                  <MoreVertical className="ml-auto" />
+                  <Settings2 className="ml-auto" />
                 </SidebarMenuButton>
               </DropdownMenuTrigger>
               {item.items?.length ? (
