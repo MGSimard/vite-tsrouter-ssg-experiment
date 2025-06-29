@@ -1,4 +1,4 @@
-import { GalleryVerticalEnd, LucideIcon, MoreHorizontal, Settings2 } from "lucide-react";
+import { GalleryVerticalEnd, LucideIcon, MoreHorizontal, MoreVertical, Settings2 } from "lucide-react";
 import { SidebarMenuButton, SidebarMenu, SidebarMenuItem } from "@/_components/ui/sidebar";
 import {
   DropdownMenu,
@@ -29,7 +29,7 @@ export function NavTeam({
     }[];
   }[];
 }) {
-  const { isMobile } = useSidebar();
+  const { isMobile, setOpenMobile } = useSidebar();
 
   return (
     // <SidebarMenu>
@@ -61,7 +61,7 @@ export function NavTeam({
                     <span className="truncate font-medium">{organization.name}</span>
                     <span className="truncate text-xs">{organization.plan}</span>
                   </div>
-                  <Settings2 className="ml-auto" />
+                  <MoreVertical className="ml-auto" />
                 </SidebarMenuButton>
               </DropdownMenuTrigger>
               {item.items?.length ? (
@@ -73,6 +73,7 @@ export function NavTeam({
                     <DropdownMenuItem asChild key={item.title}>
                       <Link
                         to={item.url}
+                        onClick={() => setOpenMobile(false)}
                         className="cursor-pointer"
                         activeProps={{
                           className: "bg-sidebar-accent font-medium text-sidebar-accent-foreground",

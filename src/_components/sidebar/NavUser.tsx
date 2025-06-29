@@ -1,4 +1,13 @@
-import { ChevronsUpDown, CircleEllipsis, Ellipsis, LifeBuoy, LogOut, Settings2 } from "lucide-react";
+import {
+  ChevronsUpDown,
+  CircleEllipsis,
+  Ellipsis,
+  LifeBuoy,
+  LogOut,
+  MoreHorizontal,
+  Settings,
+  Settings2,
+} from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/_components/ui/avatar";
 import {
   DropdownMenu,
@@ -35,7 +44,7 @@ export function NavUser() {
                 <span className="truncate font-medium">{user.name}</span>
                 <span className="truncate text-xs">{user.email}</span>
               </div>
-              <Ellipsis className="ml-auto size-4" />
+              <Settings className="ml-auto size-4" />
             </SidebarMenuButton>
           </DropdownMenuTrigger>
           <DropdownMenuContent
