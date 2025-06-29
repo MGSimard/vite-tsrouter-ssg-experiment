@@ -83,7 +83,7 @@ export function DashboardSidebar() {
   return (
     <Sidebar collapsible="icon">
       <SidebarHeader>
-        <NavTeam />
+        <NavTeam items={NAV_LINKS.admin} />
       </SidebarHeader>
       <SidebarContent>
         <NavMain items={NAV_LINKS.navMain} />
