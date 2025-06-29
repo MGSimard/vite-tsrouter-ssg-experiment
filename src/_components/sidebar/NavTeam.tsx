@@ -62,6 +62,7 @@ export function NavTeam({
                     <span className="truncate text-xs">{organization.plan}</span>
                   </div>
                   <Settings2 className="ml-auto" />
+                  {/* IF THIS WAS MSSP IT'D BE A UPDOWN ARROW FOR TEAM SWITCHER */}
                 </SidebarMenuButton>
               </DropdownMenuTrigger>
               {item.items?.length ? (
