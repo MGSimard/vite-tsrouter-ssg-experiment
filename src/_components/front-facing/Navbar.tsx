@@ -43,7 +43,7 @@ export function Navbar() {
                 <X className="in-data-[state=open]:rotate-0 in-data-[state=open]:scale-100 in-data-[state=open]:opacity-100 absolute inset-0 -rotate-180 scale-0 opacity-0 duration-200 m-auto" />
               </Button>
             </PopoverTrigger>
-            <PopoverContent className="md:hidden w-full p-6 wrapper-control">
+            <PopoverContent className="md:hidden w-full p-4 wrapper-control">
               <ul className="flex flex-col gap-4 text-center">
                 <li>
                   <PopoverClose asChild>
