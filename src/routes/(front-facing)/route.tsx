@@ -10,7 +10,7 @@ function LayoutFrontFacing() {
   return (
     <>
       <Navbar />
-      <main className="w-full flex-grow flex flex-col">
+      <main className="w-full flex-grow flex flex-col relative">
         <Outlet />
       </main>
       <Footer />
