@@ -47,5 +47,5 @@ export default tseslint.config(
       ],
       "react-hooks/react-compiler": "error",
     },
-  },
+  }
 );
