@@ -6,7 +6,6 @@ https://ui.shadcn.com/
 https://tailark.com/
 https://reui.io/
 https://shadcnstudio.com/
-https://uipub.com/
 https://uipub.com/pure-ui
 
 --
