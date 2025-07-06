@@ -1,3 +1,4 @@
+import { LogoCloud } from "@/_components/front-facing/LogoCloud";
 import { Button } from "@/_components/ui/button";
 import { createFileRoute, Link } from "@tanstack/react-router";
 
@@ -10,12 +11,10 @@ function App() {
     <>
       <section className="text-balance flex flex-col justify-center min-h-dvh">
         <div className="max-w-8xl w-full p-6 mx-auto flex flex-col gap-8">
-          <h1 className="text-4xl md:text-6xl font-bold max-w-2xl">
-            Lorem ipsum dolor sit amet consectetur.
-          </h1>
+          <h1 className="text-4xl md:text-6xl font-bold max-w-2xl">Lorem ipsum dolor sit amet consectetur.</h1>
           <p className="text-pretty text-lg max-w-2xl">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-            quos. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet
+            consectetur adipisicing elit.
           </p>
           <div className="flex flex-wrap gap-4">
             <Button size="lg" className="font-bold" asChild>
@@ -27,6 +26,7 @@ function App() {
           </div>
         </div>
       </section>
+      <LogoCloud />
       <section className="flex flex-col">
         <div className="max-w-8xl w-full p-6 mx-auto flex flex-col">
           <h2>Section 2</h2>
