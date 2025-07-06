@@ -35,7 +35,9 @@ export function Navbar() {
         </nav>
         <div className="flex items-center gap-4">
           <ToggleTheme />
-          <Button className="hidden md:block">Access</Button>
+          <Button className="hidden md:block" asChild>
+            <Link to="/dashboard">Access</Link>
+          </Button>
           <Popover>
             <PopoverTrigger className="md:hidden" asChild>
               <Button variant="ghost" size="icon" className="relative">
@@ -47,24 +49,24 @@ export function Navbar() {
               <ul className="flex flex-col gap-4 text-center">
                 <li>
                   <PopoverClose asChild>
-                    <Link to="/" className="w-full block">
-                      Home
-                    </Link>
+                    <Button variant="ghost" className="w-full" asChild>
+                      <Link to="/">Home</Link>
+                    </Button>
                   </PopoverClose>
                 </li>
                 {NAV_LINKS.map((link) => (
                   <li key={link.label}>
                     <PopoverClose asChild>
-                      <Link to={link.href} className="w-full block">
-                        {link.label}
-                      </Link>
+                      <Button variant="ghost" className="w-full" asChild>
+                        <Link to={link.href}>{link.label}</Link>
+                      </Button>
                     </PopoverClose>
                   </li>
                 ))}
                 <li>
                   <PopoverClose asChild>
                     <Button className="w-full" asChild>
-                      <Link to="/">Access</Link>
+                      <Link to="/dashboard">Access</Link>
                     </Button>
                   </PopoverClose>
                 </li>
