@@ -7,6 +7,8 @@ https://tailark.com/
 https://reui.io/
 https://shadcnstudio.com/
 https://uipub.com/pure-ui
+https://www.shadcnblocks.com/
+https://www.shadcn-ui-blocks.com/
 
 --
 
