@@ -26,7 +26,10 @@ export function Navbar() {
           <ul className="hidden md:flex items-center gap-4">
             {NAV_LINKS.map((link) => (
               <li key={link.label}>
-                <Link to={link.href} activeProps={{ className: "text-primary" }}>
+                <Link
+                  to={link.href}
+                  className="text-muted-foreground hover:text-foreground transition-colors duration-200"
+                  activeProps={{ className: "text-primary" }}>
                   {link.label}
                 </Link>
               </li>
@@ -49,16 +52,26 @@ export function Navbar() {
               <ul className="flex flex-col gap-4 text-center">
                 <li>
                   <PopoverClose asChild>
-                    <Button variant="ghost" className="w-full" asChild>
-                      <Link to="/">Home</Link>
+                    <Button
+                      variant="ghost"
+                      className="w-full text-muted-foreground hover:text-foreground transition-colors duration-200"
+                      asChild>
+                      <Link to="/" activeProps={{ className: "text-primary" }}>
+                        Home
+                      </Link>
                     </Button>
                   </PopoverClose>
                 </li>
                 {NAV_LINKS.map((link) => (
                   <li key={link.label}>
                     <PopoverClose asChild>
-                      <Button variant="ghost" className="w-full" asChild>
-                        <Link to={link.href}>{link.label}</Link>
+                      <Button
+                        variant="ghost"
+                        className="w-full text-muted-foreground hover:text-foreground transition-colors duration-200"
+                        asChild>
+                        <Link to={link.href} activeProps={{ className: "text-primary" }}>
+                          {link.label}
+                        </Link>
                       </Button>
                     </PopoverClose>
                   </li>
