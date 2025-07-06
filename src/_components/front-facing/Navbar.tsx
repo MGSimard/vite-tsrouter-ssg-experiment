@@ -21,7 +21,7 @@ const NAV_LINKS = [
 
 export function Navbar() {
   return (
-    <header className="fixed top-0 w-full z-50 border-b bg-background/40 backdrop-blur-sm h-18 flex items-center px-6">
+    <header className="fixed top-0 w-full z-50 border-b bg-background/40 backdrop-blur-sm h-[var(--header-height)] flex items-center px-6">
       <div className="max-w-8xl mx-auto flex justify-between items-center w-full gap-6">
         <nav className="flex items-center gap-8 font-light">
           <Link to="/" activeProps={{ className: "text-primary" }} aria-label="Home">

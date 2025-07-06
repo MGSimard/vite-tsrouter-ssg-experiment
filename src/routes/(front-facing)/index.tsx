@@ -9,8 +9,8 @@ export const Route = createFileRoute("/(front-facing)/")({
 function App() {
   return (
     <>
-      <section className="text-balance flex flex-col justify-center min-h-dvh p-6">
-        <div className="max-w-8xl w-full mx-auto flex flex-col gap-8">
+      <section className="text-balance flex flex-col gap-8 justify-center min-h-[calc(100dvh-var(--header-height))] p-6">
+        <div className="max-w-8xl w-full mx-auto flex flex-col justify-center gap-8 grow">
           <h1 className="text-4xl md:text-6xl font-bold max-w-2xl">Lorem ipsum dolor sit amet consectetur.</h1>
           <p className="text-pretty text-lg max-w-2xl">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet
@@ -24,8 +24,8 @@ function App() {
               <Link to="#">Request a Demo</Link>
             </Button>
           </div>
-          <LogoCloud />
         </div>
+        <LogoCloud />
       </section>
       <section className="flex flex-col p-6">
         <div className="max-w-8xl w-full mx-auto flex flex-col">
