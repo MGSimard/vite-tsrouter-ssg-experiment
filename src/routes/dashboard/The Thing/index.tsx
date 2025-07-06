@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/dashboard/The Thing/")({
   component: RouteComponent,
+  loader: () => ({ crumb: "The Thing" }),
 });
 
 function RouteComponent() {
