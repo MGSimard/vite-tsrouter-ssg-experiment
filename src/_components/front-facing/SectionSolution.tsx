@@ -3,7 +3,7 @@ import { Cpu, Fingerprint, Pencil, Settings2, Sparkles, Zap } from "lucide-react
 export function SectionSolutions() {
   return (
     <section className="px-6 py-12 md:py-20">
-      <div className="mx-auto max-w-8xl space-y-8 md:space-y-16">
+      <div className="mx-auto max-w-5xl space-y-8 md:space-y-16">
         <div className="mx-auto max-w-xl space-y-6 text-center md:space-y-12">
           <h2 className="text-balance text-4xl font-medium lg:text-5xl">Solution Section</h2>
           <p className="text-muted-foreground">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
