@@ -24,7 +24,7 @@ export function Navbar() {
     <header className="fixed top-0 w-full z-50 border-b bg-background/40  backdrop-blur-sm h-18 flex items-center">
       <div className="max-w-8xl mx-auto flex justify-between items-center w-full gap-6 px-6">
         <nav className="flex items-center gap-8 font-light">
-          <Link to="/" activeProps={{ className: "text-primary" }}>
+          <Link to="/" activeProps={{ className: "text-primary" }} aria-label="Home">
             <Bolt className="w-6 h-6" />
           </Link>
           <ul className="hidden md:flex w-full items-center gap-8">
