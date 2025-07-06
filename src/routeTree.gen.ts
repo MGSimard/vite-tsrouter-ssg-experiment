@@ -13,6 +13,7 @@ import { Route as DashboardRouteRouteImport } from './routes/dashboard/route'
 import { Route as frontFacingRouteRouteImport } from './routes/(front-facing)/route'
 import { Route as DashboardIndexRouteImport } from './routes/dashboard/index'
 import { Route as frontFacingIndexRouteImport } from './routes/(front-facing)/index'
+import { Route as frontFacingPricingRouteImport } from './routes/(front-facing)/pricing'
 import { Route as frontFacingFeaturesRouteImport } from './routes/(front-facing)/features'
 import { Route as frontFacingAboutRouteImport } from './routes/(front-facing)/about'
 import { Route as DashboardOrganizationSettingsRouteRouteImport } from './routes/dashboard/organization-settings/route'
@@ -47,6 +48,11 @@ const DashboardIndexRoute = DashboardIndexRouteImport.update({
 const frontFacingIndexRoute = frontFacingIndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => frontFacingRouteRoute,
+} as any)
+const frontFacingPricingRoute = frontFacingPricingRouteImport.update({
+  id: '/pricing',
+  path: '/pricing',
   getParentRoute: () => frontFacingRouteRoute,
 } as any)
 const frontFacingFeaturesRoute = frontFacingFeaturesRouteImport.update({
@@ -145,6 +151,7 @@ export interface FileRoutesByFullPath {
   '/dashboard/organization-settings': typeof DashboardOrganizationSettingsRouteRouteWithChildren
   '/about': typeof frontFacingAboutRoute
   '/features': typeof frontFacingFeaturesRoute
+  '/pricing': typeof frontFacingPricingRoute
   '/dashboard/': typeof DashboardIndexRoute
   '/demo/tanstack-query': typeof frontFacingDemoTanstackQueryRoute
   '/dashboard/organization-settings/api-keys': typeof DashboardOrganizationSettingsApiKeysRoute
@@ -163,6 +170,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/about': typeof frontFacingAboutRoute
   '/features': typeof frontFacingFeaturesRoute
+  '/pricing': typeof frontFacingPricingRoute
   '/': typeof frontFacingIndexRoute
   '/dashboard': typeof DashboardIndexRoute
   '/demo/tanstack-query': typeof frontFacingDemoTanstackQueryRoute
@@ -186,6 +194,7 @@ export interface FileRoutesById {
   '/dashboard/organization-settings': typeof DashboardOrganizationSettingsRouteRouteWithChildren
   '/(front-facing)/about': typeof frontFacingAboutRoute
   '/(front-facing)/features': typeof frontFacingFeaturesRoute
+  '/(front-facing)/pricing': typeof frontFacingPricingRoute
   '/(front-facing)/': typeof frontFacingIndexRoute
   '/dashboard/': typeof DashboardIndexRoute
   '/(front-facing)/demo/tanstack-query': typeof frontFacingDemoTanstackQueryRoute
@@ -210,6 +219,7 @@ export interface FileRouteTypes {
     | '/dashboard/organization-settings'
     | '/about'
     | '/features'
+    | '/pricing'
     | '/dashboard/'
     | '/demo/tanstack-query'
     | '/dashboard/organization-settings/api-keys'
@@ -228,6 +238,7 @@ export interface FileRouteTypes {
   to:
     | '/about'
     | '/features'
+    | '/pricing'
     | '/'
     | '/dashboard'
     | '/demo/tanstack-query'
@@ -250,6 +261,7 @@ export interface FileRouteTypes {
     | '/dashboard/organization-settings'
     | '/(front-facing)/about'
     | '/(front-facing)/features'
+    | '/(front-facing)/pricing'
     | '/(front-facing)/'
     | '/dashboard/'
     | '/(front-facing)/demo/tanstack-query'
@@ -300,6 +312,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof frontFacingIndexRouteImport
+      parentRoute: typeof frontFacingRouteRoute
+    }
+    '/(front-facing)/pricing': {
+      id: '/(front-facing)/pricing'
+      path: '/pricing'
+      fullPath: '/pricing'
+      preLoaderRoute: typeof frontFacingPricingRouteImport
       parentRoute: typeof frontFacingRouteRoute
     }
     '/(front-facing)/features': {
@@ -420,6 +439,7 @@ declare module '@tanstack/react-router' {
 interface frontFacingRouteRouteChildren {
   frontFacingAboutRoute: typeof frontFacingAboutRoute
   frontFacingFeaturesRoute: typeof frontFacingFeaturesRoute
+  frontFacingPricingRoute: typeof frontFacingPricingRoute
   frontFacingIndexRoute: typeof frontFacingIndexRoute
   frontFacingDemoTanstackQueryRoute: typeof frontFacingDemoTanstackQueryRoute
 }
@@ -427,6 +447,7 @@ interface frontFacingRouteRouteChildren {
 const frontFacingRouteRouteChildren: frontFacingRouteRouteChildren = {
   frontFacingAboutRoute: frontFacingAboutRoute,
   frontFacingFeaturesRoute: frontFacingFeaturesRoute,
+  frontFacingPricingRoute: frontFacingPricingRoute,
   frontFacingIndexRoute: frontFacingIndexRoute,
   frontFacingDemoTanstackQueryRoute: frontFacingDemoTanstackQueryRoute,
 }
