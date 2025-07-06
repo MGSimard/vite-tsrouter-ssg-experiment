@@ -137,7 +137,8 @@
     background-position: 100%;
   }
 }
-/* 
-* {
-  outline: 1px solid red;
-} */
+
+[data-radix-popper-content-wrapper]:has(.wrapper-control) {
+  padding-inline: 1.5rem;
+  width: 100%;
+}

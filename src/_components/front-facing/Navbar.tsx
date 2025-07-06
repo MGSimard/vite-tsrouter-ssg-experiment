@@ -2,22 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { ToggleTheme } from "@/_components/ToggleTheme";
 import { Bolt, Menu, X } from "lucide-react";
 import { Button } from "@/_components/ui/button";
-import {
-  Drawer,
-  DrawerClose,
-  DrawerFooter,
-  DrawerDescription,
-  DrawerTitle,
-  DrawerContent,
-  DrawerHeader,
-  DrawerTrigger,
-} from "@/_components/ui/drawer";
-import {
-  Popover,
-  PopoverClose,
-  PopoverContent,
-  PopoverTrigger,
-} from "../ui/popover";
+import { Popover, PopoverClose, PopoverContent, PopoverTrigger } from "@/_components/ui/popover";
 
 const NAV_LINKS = [
   {
@@ -30,10 +15,6 @@ const NAV_LINKS = [
   },
 ];
 
-// Plan
-// When below N width
-// Render Draw button instead of links
-
 export function Navbar() {
   return (
     <header className="fixed top-0 w-full z-50 border-b bg-background/40  backdrop-blur-sm h-18 flex items-center">
@@ -42,13 +23,10 @@ export function Navbar() {
           <Link to="/" activeProps={{ className: "text-primary" }}>
             <Bolt className="w-6 h-6" />
           </Link>
-          <ul className="flex items-center gap-4">
+          <ul className="hidden md:flex items-center gap-4">
             {NAV_LINKS.map((link) => (
               <li key={link.label}>
-                <Link
-                  to={link.href}
-                  activeProps={{ className: "text-primary" }}
-                >
+                <Link to={link.href} activeProps={{ className: "text-primary" }}>
                   {link.label}
                 </Link>
               </li>
@@ -57,45 +35,42 @@ export function Navbar() {
         </nav>
         <div className="flex items-center gap-4">
           <ToggleTheme />
-          <Button>Access</Button>
+          <Button className="hidden md:block">Access</Button>
           <Popover>
-            <PopoverTrigger asChild>
+            <PopoverTrigger className="md:hidden" asChild>
               <Button variant="ghost" size="icon" className="relative">
                 <Menu className="in-data-[state=open]:rotate-180 in-data-[state=open]:scale-0 in-data-[state=open]:opacity-0 duration-200" />
                 <X className="in-data-[state=open]:rotate-0 in-data-[state=open]:scale-100 in-data-[state=open]:opacity-100 absolute inset-0 -rotate-180 scale-0 opacity-0 duration-200 m-auto" />
               </Button>
             </PopoverTrigger>
-            <PopoverContent className="w-screen max-w-none left-0 transform-none">
-              <ul className="flex flex-col items-center gap-4">
+            <PopoverContent className="md:hidden w-full p-6 wrapper-control">
+              <ul className="flex flex-col gap-4 text-center">
+                <li>
+                  <PopoverClose asChild>
+                    <Link to="/" className="w-full block">
+                      Home
+                    </Link>
+                  </PopoverClose>
+                </li>
                 {NAV_LINKS.map((link) => (
                   <li key={link.label}>
                     <PopoverClose asChild>
-                      <Link to={link.href}>{link.label}</Link>
+                      <Link to={link.href} className="w-full block">
+                        {link.label}
+                      </Link>
                     </PopoverClose>
                   </li>
                 ))}
+                <li>
+                  <PopoverClose asChild>
+                    <Button className="w-full" asChild>
+                      <Link to="/">Access</Link>
+                    </Button>
+                  </PopoverClose>
+                </li>
               </ul>
             </PopoverContent>
           </Popover>
-          {/* <Drawer direction="top">
-            <DrawerTrigger aria-label="Open navigation">
-              <Menu />
-            </DrawerTrigger>
-            <DrawerContent className="p-4">
-              <ul className="flex flex-col items-center gap-4">
-                {NAV_LINKS.map((link) => (
-                  <li key={link.label}>
-                    <Link
-                      to={link.href}
-                      activeProps={{ className: "text-primary" }}
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </DrawerContent>
-          </Drawer> */}
         </div>
       </div>
     </header>
