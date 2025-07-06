@@ -9,7 +9,7 @@ export const Route = createFileRoute("/(front-facing)/")({
 function App() {
   return (
     <>
-      <section className="text-balance flex flex-col gap-8 justify-center min-h-[calc(100dvh-var(--header-height))] p-6">
+      <section className="text-balance flex flex-col gap-8 justify-center min-h-dvh p-6 pt-[calc(var(--header-height)+1.5rem)]">
         <div className="max-w-8xl w-full mx-auto flex flex-col justify-center gap-8 grow">
           <h1 className="text-4xl md:text-6xl font-bold max-w-2xl">Lorem ipsum dolor sit amet consectetur.</h1>
           <p className="text-pretty text-lg max-w-2xl">
@@ -27,7 +27,7 @@ function App() {
         </div>
         <LogoCloud />
       </section>
-      <section className="flex flex-col p-6">
+      <section className="flex flex-col p-6 h-[300dvh]">
         <div className="max-w-8xl w-full mx-auto flex flex-col">
           <h2>Section 2</h2>
           <p>Section content</p>
