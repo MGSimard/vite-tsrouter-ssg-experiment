@@ -67,7 +67,6 @@ export function SectionFeatures() {
               <Activity className="size-4" />
               Activity feed
             </span>
-
             <p className="my-8 text-2xl font-semibold">
               Monitor your application's activity in real-time.{" "}
               <span className="text-muted-foreground"> Instantly identify and resolve issues.</span>
