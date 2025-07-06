@@ -3,7 +3,7 @@ import { ChartNoAxesColumn, DollarSign, TriangleAlert } from "lucide-react";
 
 export function SectionProblems() {
   return (
-    <section className="px-6 py-32">
+    <section className="px-6 py-24 md:py-40">
       <div className="@container mx-auto max-w-8xl">
         <h2 className="text-balance text-4xl font-semibold lg:text-5xl text-center">Industry Problems Section</h2>
         <p className="mt-4 text-center text-muted-foreground">
@@ -49,7 +49,8 @@ export function SectionProblems() {
             </CardHeader>
             <CardContent>
               <p className="mt-3 text-sm text-balance">
-                Elements to functionality, you have complete control to create a unique experience.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis odio sed facere eligendi dolor velit
+                laboriosam voluptatem.
               </p>
             </CardContent>
           </Card>
