@@ -1,6 +1,7 @@
-import { LogoCloud } from "@/_components/front-facing/LogoCloud";
-import { Button } from "@/_components/ui/button";
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { Button } from "@/_components/ui/button";
+import { LogoCloud } from "@/_components/front-facing/LogoCloud";
+import { SectionProblems } from "@/_components/front-facing/SectionProblems";
 
 export const Route = createFileRoute("/(front-facing)/")({
   component: PageHome,
@@ -32,12 +33,7 @@ function PageHome() {
         </div>
         <LogoCloud />
       </section>
-      <section className="flex flex-col p-6 h-[300dvh]">
-        <div className="max-w-8xl w-full mx-auto flex flex-col">
-          <h2>Section 2</h2>
-          <p>Section content</p>
-        </div>
-      </section>
+      <SectionProblems />
     </>
   );
 }
