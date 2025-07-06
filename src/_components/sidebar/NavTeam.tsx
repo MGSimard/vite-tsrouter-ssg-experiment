@@ -1,4 +1,4 @@
-import { GalleryVerticalEnd, LucideIcon, MoreHorizontal, MoreVertical, Settings2 } from "lucide-react";
+import { GalleryVerticalEnd, type LucideIcon, Settings2 } from "lucide-react";
 import { SidebarMenuButton, SidebarMenu, SidebarMenuItem } from "@/_components/ui/sidebar";
 import {
   DropdownMenu,

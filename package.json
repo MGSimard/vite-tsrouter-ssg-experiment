@@ -1,5 +1,5 @@
 {
-  "name": "vite-tsrouter-ssg-experiment",
+  "name": "vite-tsrouter-startpoint",
   "private": true,
   "type": "module",
   "scripts": {
@@ -19,6 +19,8 @@
     "@radix-ui/react-slot": "^1.2.3",
     "@radix-ui/react-tooltip": "^1.2.7",
     "@tailwindcss/vite": "^4.1.10",
+    "@tanstack/react-query": "^5.81.5",
+    "@tanstack/react-query-devtools": "^5.81.5",
     "@tanstack/react-router": "^1.121.27",
     "@tanstack/react-router-devtools": "^1.121.27",
     "class-variance-authority": "^0.7.1",
@@ -33,6 +35,7 @@
   },
   "devDependencies": {
     "@tanstack/eslint-config": "^0.2.0",
+    "@tanstack/eslint-plugin-query": "^5.81.2",
     "@tanstack/router-plugin": "^1.121.29",
     "@types/node": "^24.0.3",
     "@types/react": "^19.1.8",
@@ -49,7 +52,7 @@
   "overrides": {
     "@tanstack/react-router": "^1.121.27"
   },
-  "packageManager": "pnpm@10.12.1",
+  "packageManager": "pnpm@10.12.4",
   "engines": {
     "node": ">=21.2.0"
   }

@@ -26,6 +26,7 @@ import { Route as DashboardOrganizationSettingsTeamRouteImport } from './routes/
 import { Route as DashboardOrganizationSettingsIntegrationsRouteImport } from './routes/dashboard/organization-settings/integrations'
 import { Route as DashboardOrganizationSettingsBillingRouteImport } from './routes/dashboard/organization-settings/billing'
 import { Route as DashboardOrganizationSettingsApiKeysRouteImport } from './routes/dashboard/organization-settings/api-keys'
+import { Route as frontFacingDemoTanstackQueryRouteImport } from './routes/(front-facing)/demo.tanstack-query'
 import { Route as DashboardOrganizationSettingsBillingNestedTestRouteImport } from './routes/dashboard/organization-settings/billing.nested-test'
 import { Route as DashboardOrganizationSettingsBillingNestedTestDeepRouteImport } from './routes/dashboard/organization-settings/billing.nested-test.deep'
 
@@ -119,6 +120,12 @@ const DashboardOrganizationSettingsApiKeysRoute =
     path: '/api-keys',
     getParentRoute: () => DashboardOrganizationSettingsRouteRoute,
   } as any)
+const frontFacingDemoTanstackQueryRoute =
+  frontFacingDemoTanstackQueryRouteImport.update({
+    id: '/demo/tanstack-query',
+    path: '/demo/tanstack-query',
+    getParentRoute: () => frontFacingRouteRoute,
+  } as any)
 const DashboardOrganizationSettingsBillingNestedTestRoute =
   DashboardOrganizationSettingsBillingNestedTestRouteImport.update({
     id: '/nested-test',
@@ -139,6 +146,7 @@ export interface FileRoutesByFullPath {
   '/about': typeof frontFacingAboutRoute
   '/features': typeof frontFacingFeaturesRoute
   '/dashboard/': typeof DashboardIndexRoute
+  '/demo/tanstack-query': typeof frontFacingDemoTanstackQueryRoute
   '/dashboard/organization-settings/api-keys': typeof DashboardOrganizationSettingsApiKeysRoute
   '/dashboard/organization-settings/billing': typeof DashboardOrganizationSettingsBillingRouteWithChildren
   '/dashboard/organization-settings/integrations': typeof DashboardOrganizationSettingsIntegrationsRoute
@@ -157,6 +165,7 @@ export interface FileRoutesByTo {
   '/features': typeof frontFacingFeaturesRoute
   '/': typeof frontFacingIndexRoute
   '/dashboard': typeof DashboardIndexRoute
+  '/demo/tanstack-query': typeof frontFacingDemoTanstackQueryRoute
   '/dashboard/organization-settings/api-keys': typeof DashboardOrganizationSettingsApiKeysRoute
   '/dashboard/organization-settings/billing': typeof DashboardOrganizationSettingsBillingRouteWithChildren
   '/dashboard/organization-settings/integrations': typeof DashboardOrganizationSettingsIntegrationsRoute
@@ -179,6 +188,7 @@ export interface FileRoutesById {
   '/(front-facing)/features': typeof frontFacingFeaturesRoute
   '/(front-facing)/': typeof frontFacingIndexRoute
   '/dashboard/': typeof DashboardIndexRoute
+  '/(front-facing)/demo/tanstack-query': typeof frontFacingDemoTanstackQueryRoute
   '/dashboard/organization-settings/api-keys': typeof DashboardOrganizationSettingsApiKeysRoute
   '/dashboard/organization-settings/billing': typeof DashboardOrganizationSettingsBillingRouteWithChildren
   '/dashboard/organization-settings/integrations': typeof DashboardOrganizationSettingsIntegrationsRoute
@@ -201,6 +211,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/features'
     | '/dashboard/'
+    | '/demo/tanstack-query'
     | '/dashboard/organization-settings/api-keys'
     | '/dashboard/organization-settings/billing'
     | '/dashboard/organization-settings/integrations'
@@ -219,6 +230,7 @@ export interface FileRouteTypes {
     | '/features'
     | '/'
     | '/dashboard'
+    | '/demo/tanstack-query'
     | '/dashboard/organization-settings/api-keys'
     | '/dashboard/organization-settings/billing'
     | '/dashboard/organization-settings/integrations'
@@ -240,6 +252,7 @@ export interface FileRouteTypes {
     | '/(front-facing)/features'
     | '/(front-facing)/'
     | '/dashboard/'
+    | '/(front-facing)/demo/tanstack-query'
     | '/dashboard/organization-settings/api-keys'
     | '/dashboard/organization-settings/billing'
     | '/dashboard/organization-settings/integrations'
@@ -380,6 +393,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DashboardOrganizationSettingsApiKeysRouteImport
       parentRoute: typeof DashboardOrganizationSettingsRouteRoute
     }
+    '/(front-facing)/demo/tanstack-query': {
+      id: '/(front-facing)/demo/tanstack-query'
+      path: '/demo/tanstack-query'
+      fullPath: '/demo/tanstack-query'
+      preLoaderRoute: typeof frontFacingDemoTanstackQueryRouteImport
+      parentRoute: typeof frontFacingRouteRoute
+    }
     '/dashboard/organization-settings/billing/nested-test': {
       id: '/dashboard/organization-settings/billing/nested-test'
       path: '/nested-test'
@@ -401,12 +421,14 @@ interface frontFacingRouteRouteChildren {
   frontFacingAboutRoute: typeof frontFacingAboutRoute
   frontFacingFeaturesRoute: typeof frontFacingFeaturesRoute
   frontFacingIndexRoute: typeof frontFacingIndexRoute
+  frontFacingDemoTanstackQueryRoute: typeof frontFacingDemoTanstackQueryRoute
 }
 
 const frontFacingRouteRouteChildren: frontFacingRouteRouteChildren = {
   frontFacingAboutRoute: frontFacingAboutRoute,
   frontFacingFeaturesRoute: frontFacingFeaturesRoute,
   frontFacingIndexRoute: frontFacingIndexRoute,
+  frontFacingDemoTanstackQueryRoute: frontFacingDemoTanstackQueryRoute,
 }
 
 const frontFacingRouteRouteWithChildren =

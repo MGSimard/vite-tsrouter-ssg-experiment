@@ -1,10 +1,12 @@
 import tsParser from "@typescript-eslint/parser";
 import tseslint from "typescript-eslint";
+import pluginQuery from "@tanstack/eslint-plugin-query";
 import * as reactHooks from "eslint-plugin-react-hooks";
 
 export default tseslint.config(
   tseslint.configs.recommendedTypeChecked,
   tseslint.configs.stylisticTypeChecked,
+  pluginQuery.configs["flat/recommended"],
   reactHooks.configs.recommended,
   {
     languageOptions: {
@@ -12,7 +14,7 @@ export default tseslint.config(
       ecmaVersion: "latest",
       sourceType: "module",
       parserOptions: {
-        project: true,
+        project: "./tsconfig.json",
         tsconfigRootDir: import.meta.dirname,
       },
     },
@@ -41,7 +43,7 @@ export default tseslint.config(
           },
         },
       ],
-      "react-compiler/react-compiler": "error",
+      "react-hooks/react-compiler": "error",
     },
   }
 );
