@@ -9,7 +9,7 @@ export function SectionSolutions() {
           <p className="text-muted-foreground">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
         </div>
 
-        <div className="mx-auto grid max-w-4xl divide-x divide-y border *:p-12 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mx-auto grid  divide-x divide-y border *:p-12 sm:grid-cols-2 lg:grid-cols-3">
           <div className="space-y-3">
             <div className="flex items-center gap-2">
               <Zap className="size-4" />

@@ -3,6 +3,7 @@ import { Button } from "@/_components/ui/button";
 import { LogoCloud } from "@/_components/front-facing/LogoCloud";
 import { SectionProblems } from "@/_components/front-facing/SectionProblems";
 import { SectionSolutions } from "@/_components/front-facing/SectionSolution";
+import { SectionFeatures } from "@/_components/front-facing/SectionFeatures";
 
 export const Route = createFileRoute("/(front-facing)/")({
   component: PageHome,
@@ -36,6 +37,7 @@ function PageHome() {
       </section>
       <SectionProblems />
       <SectionSolutions />
+      <SectionFeatures />
     </>
   );
 }
