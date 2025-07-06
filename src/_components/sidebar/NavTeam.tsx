@@ -1,4 +1,4 @@
-import { GalleryVerticalEnd, type LucideIcon, Settings2 } from "lucide-react";
+import { GalleryVerticalEnd, Settings, type LucideIcon } from "lucide-react";
 import { SidebarMenuButton, SidebarMenu, SidebarMenuItem } from "@/_components/ui/sidebar";
 import {
   DropdownMenu,
@@ -61,7 +61,7 @@ export function NavTeam({
                     <span className="truncate font-medium">{organization.name}</span>
                     <span className="truncate text-xs">{organization.plan}</span>
                   </div>
-                  <Settings2 className="ml-auto" />
+                  <Settings className="ml-auto" />
                   {/* IF THIS WAS MSSP IT'D BE A UPDOWN ARROW FOR TEAM SWITCHER */}
                 </SidebarMenuButton>
               </DropdownMenuTrigger>
