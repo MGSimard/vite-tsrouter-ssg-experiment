@@ -4,6 +4,7 @@ import { LogoCloud } from "@/_components/front-facing/LogoCloud";
 import { SectionProblems } from "@/_components/front-facing/SectionProblems";
 import { SectionSolutions } from "@/_components/front-facing/SectionSolution";
 import { SectionFeatures } from "@/_components/front-facing/SectionFeatures";
+import { SectionFeatures2 } from "@/_components/front-facing/SectionFeatures2";
 
 export const Route = createFileRoute("/(front-facing)/")({
   component: PageHome,
@@ -38,6 +39,7 @@ function PageHome() {
       <SectionProblems />
       <SectionSolutions />
       <SectionFeatures />
+      <SectionFeatures2 />
     </>
   );
 }

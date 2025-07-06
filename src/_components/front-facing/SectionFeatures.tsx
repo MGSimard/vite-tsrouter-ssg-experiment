@@ -6,7 +6,7 @@ import { type ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent } f
 
 export function SectionFeatures() {
   return (
-    <section className="px-6 py-16 md:py-32">
+    <section className="px-6 pt-16 md:pt-32">
       <div className="mx-auto grid max-w-5xl border md:grid-cols-2">
         <div>
           <div className="p-6 sm:p-12">
