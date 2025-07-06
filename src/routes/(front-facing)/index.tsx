@@ -3,10 +3,10 @@ import { Button } from "@/_components/ui/button";
 import { createFileRoute, Link } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/(front-facing)/")({
-  component: App,
+  component: PageHome,
 });
 
-function App() {
+function PageHome() {
   return (
     <>
       <section className="text-balance flex flex-col gap-8 justify-center min-h-dvh p-6 pt-[calc(var(--header-height)+1.5rem)]">

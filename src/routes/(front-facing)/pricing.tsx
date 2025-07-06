@@ -1,10 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/(front-facing)/pricing")({
-  component: RouteComponent,
+  component: PagePricing,
 });
 
-function RouteComponent() {
+function PagePricing() {
   return (
     <section className="p-6 pt-[calc(var(--header-height)+1.5rem)]">
       <div className="max-w-8xl w-full mx-auto">

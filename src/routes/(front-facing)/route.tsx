@@ -3,10 +3,10 @@ import { Navbar } from "@/_components/front-facing/Navbar";
 import { Footer } from "@/_components/front-facing/Footer";
 
 export const Route = createFileRoute("/(front-facing)")({
-  component: RouteComponent,
+  component: LayoutFrontFacing,
 });
 
-function RouteComponent() {
+function LayoutFrontFacing() {
   return (
     <>
       <Navbar />
