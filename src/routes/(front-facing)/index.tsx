@@ -1,6 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Button } from "@/_components/ui/button";
-import { Zap } from "lucide-react";
 
 export const Route = createFileRoute("/(front-facing)/")({
   component: App,
