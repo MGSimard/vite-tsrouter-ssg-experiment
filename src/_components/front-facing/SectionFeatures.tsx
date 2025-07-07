@@ -1,62 +1,11 @@
-import { ChatterLogo } from "@/_components/front-facing/ChatterLogo";
-import { Map as MapIcon, MessageCircle, Shield, Users } from "lucide-react";
-import DottedMap from "dotted-map";
+import { Shield, Users } from "lucide-react";
+
 import { Card, CardContent } from "@/_components/ui/card";
 
 export function SectionFeatures() {
   return (
     <section className="border-t">
       <div className="mx-auto grid max-w-5xl md:grid-cols-2 px-6 py-12 md:py-20 border-x">
-        <div>
-          <div className="p-6 sm:p-12">
-            <span className="text-muted-foreground flex items-center gap-2">
-              <MapIcon className="size-4" />
-              Real time location tracking
-            </span>
-            <p className="mt-8 text-2xl font-semibold">Advanced tracking system, Instantly locate all your assets.</p>
-          </div>
-          <div aria-hidden className="relative">
-            <div className="absolute inset-0 z-10 m-auto size-fit">
-              <div className="rounded-(--radius) bg-background z-1 dark:bg-muted relative flex size-fit w-fit items-center gap-2 border px-3 py-1 text-xs font-medium shadow-md shadow-zinc-950/5">
-                <span className="text-lg">🇨🇩</span> Last connection from DR Congo
-              </div>
-              <div className="rounded-(--radius) bg-background absolute inset-2 -bottom-2 mx-auto border px-3 py-4 text-xs font-medium shadow-md shadow-zinc-950/5 dark:bg-zinc-900"></div>
-            </div>
-            <div className="relative overflow-hidden">
-              <div className="bg-radial z-1 to-background absolute inset-0 from-transparent to-75%"></div>
-              <Map />
-            </div>
-          </div>
-        </div>
-
-        <div className="overflow-hidden border-t bg-zinc-50 p-6 sm:p-12 md:border-0 md:border-l dark:bg-transparent">
-          <div className="relative z-10">
-            <span className="text-muted-foreground flex items-center gap-2">
-              <MessageCircle className="size-4" />
-              Email and web support
-            </span>
-            <p className="my-8 text-2xl font-semibold">Reach out via email or web for any assistance you need.</p>
-          </div>
-          <div aria-hidden className="flex flex-col gap-8">
-            <div>
-              <div className="flex items-center gap-2">
-                <span className="flex size-5 rounded-full border">
-                  <ChatterLogo className="m-auto size-3" />
-                </span>
-                <span className="text-muted-foreground text-xs">Sat 22 Feb</span>
-              </div>
-              <div className="rounded-(--radius) bg-background mt-1.5 w-3/5 border p-3 text-xs">
-                Hey, I'm having trouble with my account.
-              </div>
-            </div>
-            <div>
-              <div className="rounded-(--radius) mb-1 ml-auto w-3/5 bg-primary p-3 text-xs text-white">
-                Molestiae numquam debitis et ullam distinctio provident nobis repudiandae deleniti necessitatibus.
-              </div>
-              <span className="text-muted-foreground block text-right text-xs">Now</span>
-            </div>
-          </div>
-        </div>
         <div className="col-span-full border-y p-12">
           <p className="text-center text-4xl font-semibold lg:text-7xl">99.99% Uptime</p>
         </div>
@@ -313,24 +262,3 @@ export function SectionFeatures() {
     </section>
   );
 }
-
-const map = new DottedMap({ height: 55, grid: "diagonal" });
-
-const points = map.getPoints();
-
-const svgOptions = {
-  backgroundColor: "var(--color-background)",
-  color: "currentColor",
-  radius: 0.15,
-};
-
-const Map = () => {
-  const viewBox = `0 0 120 60`;
-  return (
-    <svg viewBox={viewBox} style={{ background: svgOptions.backgroundColor }}>
-      {points.map((point, index) => (
-        <circle key={index} cx={point.x} cy={point.y} r={svgOptions.radius} fill={svgOptions.color} />
-      ))}
-    </svg>
-  );
-};
