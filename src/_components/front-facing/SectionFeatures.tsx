@@ -6,9 +6,7 @@ export function SectionFeatures() {
   return (
     <section className="border-t">
       <div className="mx-auto grid max-w-5xl md:grid-cols-2 px-6 py-12 md:py-20 border-x">
-        <div className="col-span-full border-y p-12">
-          <p className="text-center text-4xl font-semibold lg:text-7xl">99.99% Uptime</p>
-        </div>
+        <p className="col-span-full text-center text-4xl font-semibold lg:text-7xl mb-12">99.99% Uptime</p>
         <div className="relative col-span-full">
           <div className="relative z-10 grid grid-cols-6 gap-3">
             <Card className="relative col-span-full flex overflow-hidden lg:col-span-2 bg-transparent">
