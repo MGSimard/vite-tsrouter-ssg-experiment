@@ -63,19 +63,6 @@ export function SectionFeatures() {
           <p className="text-center text-4xl font-semibold lg:text-7xl">99.99% Uptime</p>
         </div>
         <div className="relative col-span-full">
-          <div className="absolute z-10 max-w-lg px-6 pr-12 pt-6 md:px-12 md:pt-12">
-            <span className="text-muted-foreground flex items-center gap-2">
-              <Activity className="size-4" />
-              Activity feed
-            </span>
-            <p className="my-8 text-2xl font-semibold">
-              Monitor your application's activity in real-time.{" "}
-              <span className="text-muted-foreground"> Instantly identify and resolve issues.</span>
-            </p>
-          </div>
-          <MonitoringChart />
-        </div>
-        <div className="relative col-span-full">
           <div className="relative z-10 grid grid-cols-6 gap-3">
             <Card className="relative col-span-full flex overflow-hidden lg:col-span-2 bg-transparent">
               <CardContent className="relative m-auto size-fit pt-6">

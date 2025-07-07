@@ -38,12 +38,12 @@ function PageHome() {
         </div>
         <LogoCloud />
       </section>
-      <SectionProblems />
-      <SectionSolutions />
-      <SectionFeatures />
-      <SectionTestimonials />
-      <CallToAction />
-      <SectionFaq />
+      {/* <SectionProblems /> */}
+      {/* <SectionSolutions /> */}
+      {/* <SectionFeatures /> */}
+      {/* <SectionTestimonials /> */}
+      {/* <CallToAction /> */}
+      {/* <SectionFaq /> */}
     </>
   );
 }

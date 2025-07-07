@@ -35,13 +35,13 @@ export function SectionTestimonials() {
 
                 <div className="grid grid-cols-[auto_1fr] items-center gap-3">
                   <Avatar className="size-12">
-                    <AvatarImage
+                    {/* <AvatarImage
                       src="https://tailus.io/images/reviews/shekinah.webp"
                       alt="Shekinah Tshiokufila"
                       height="400"
                       width="400"
                       loading="lazy"
-                    />
+                    /> */}
                     <AvatarFallback>ST</AvatarFallback>
                   </Avatar>
 
@@ -62,13 +62,13 @@ export function SectionTestimonials() {
 
                 <div className="grid grid-cols-[auto_1fr] items-center gap-3">
                   <Avatar className="size-12">
-                    <AvatarImage
+                    {/* <AvatarImage
                       src="https://tailus.io/images/reviews/jonathan.webp"
                       alt="Jonathan Yombo"
                       height="400"
                       width="400"
                       loading="lazy"
-                    />
+                    /> */}
                     <AvatarFallback>JY</AvatarFallback>
                   </Avatar>
                   <div>
@@ -88,13 +88,13 @@ export function SectionTestimonials() {
 
                 <div className="grid items-center gap-3 [grid-template-columns:auto_1fr]">
                   <Avatar className="size-12">
-                    <AvatarImage
+                    {/* <AvatarImage
                       src="https://tailus.io/images/reviews/yucel.webp"
                       alt="Yucel Faruksahan"
                       height="400"
                       width="400"
                       loading="lazy"
-                    />
+                    /> */}
                     <AvatarFallback>YF</AvatarFallback>
                   </Avatar>
                   <div>
@@ -114,13 +114,13 @@ export function SectionTestimonials() {
 
                 <div className="grid grid-cols-[auto_1fr] gap-3">
                   <Avatar className="size-12">
-                    <AvatarImage
+                    {/* <AvatarImage
                       src="https://tailus.io/images/reviews/rodrigo.webp"
                       alt="Rodrigo Aguilar"
                       height="400"
                       width="400"
                       loading="lazy"
-                    />
+                    /> */}
                     <AvatarFallback>YF</AvatarFallback>
                   </Avatar>
                   <div>
