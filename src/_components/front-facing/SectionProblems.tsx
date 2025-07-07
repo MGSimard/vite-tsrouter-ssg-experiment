@@ -3,8 +3,8 @@ import { ChartNoAxesColumn, DollarSign, TriangleAlert } from "lucide-react";
 
 export function SectionProblems() {
   return (
-    <section>
-      <div className="@container mx-auto max-w-5xl px-6 py-24 md:py-40">
+    <section className="border-t">
+      <div className="@container mx-auto max-w-5xl px-6 py-24 md:py-40 border-x">
         <h2 className="text-balance text-4xl font-semibold lg:text-5xl text-center">Industry Problems Section</h2>
         <p className="mt-4 text-center text-muted-foreground">
           Libero sapiente aliquam quibusdam aspernatur, praesentium iusto repellendus.

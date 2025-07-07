@@ -7,8 +7,8 @@ import { Card, CardContent } from "@/_components/ui/card";
 
 export function SectionFeatures() {
   return (
-    <section>
-      <div className="mx-auto grid max-w-5xl border md:grid-cols-2 px-6 py-16 md:py-32">
+    <section className="border-t">
+      <div className="mx-auto grid max-w-5xl md:grid-cols-2 px-6 py-16 md:py-32 border-x">
         <div>
           <div className="p-6 sm:p-12">
             <span className="text-muted-foreground flex items-center gap-2">
