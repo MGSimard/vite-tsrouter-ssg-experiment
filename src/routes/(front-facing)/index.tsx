@@ -6,6 +6,7 @@ import { SectionSolutions } from "@/_components/front-facing/SectionSolution";
 import { SectionFeatures } from "@/_components/front-facing/SectionFeatures";
 import { SectionTestimonials } from "@/_components/front-facing/SectionTestimonials";
 import { CallToAction } from "@/_components/front-facing/CallToAction";
+import { SectionFaq } from "@/_components/front-facing/SectionFaq";
 
 export const Route = createFileRoute("/(front-facing)/")({
   component: PageHome,
@@ -28,10 +29,10 @@ function PageHome() {
           </p>
           <div className="flex flex-wrap gap-4">
             <Button size="lg" className="font-bold" asChild>
-              <Link to="#">Get Started</Link>
+              <Link to="/">Get Started</Link>
             </Button>
             <Button variant="outline" size="lg" asChild>
-              <Link to="#">Request a Demo</Link>
+              <Link to="/">Request a Demo</Link>
             </Button>
           </div>
         </div>
@@ -42,6 +43,7 @@ function PageHome() {
       <SectionFeatures />
       <SectionTestimonials />
       <CallToAction />
+      <SectionFaq />
     </>
   );
 }
