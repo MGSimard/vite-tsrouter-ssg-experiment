@@ -3,8 +3,8 @@ import { Shield, Users } from "lucide-react";
 
 export function SectionFeatures2() {
   return (
-    <section className="bg-gray-50 px-6 pb-16 pt-3 md:pb-32 dark:bg-transparent">
-      <div className="mx-auto max-w-5xl">
+    <section>
+      <div className="mx-auto max-w-5xl px-6 pb-16 pt-3 md:pb-32">
         <div className="relative">
           <div className="relative z-10 grid grid-cols-6 gap-3">
             <Card className="relative col-span-full flex overflow-hidden lg:col-span-2 bg-transparent">

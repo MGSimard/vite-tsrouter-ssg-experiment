@@ -6,8 +6,8 @@ import { type ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent } f
 
 export function SectionFeatures() {
   return (
-    <section className="px-6 pt-16 md:pt-32">
-      <div className="mx-auto grid max-w-5xl border md:grid-cols-2">
+    <section>
+      <div className="mx-auto grid max-w-5xl border md:grid-cols-2 px-6 pt-16 md:pt-32">
         <div>
           <div className="p-6 sm:p-12">
             <span className="text-muted-foreground flex items-center gap-2">

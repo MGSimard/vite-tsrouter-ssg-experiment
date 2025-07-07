@@ -21,9 +21,9 @@ const links = [
 
 export function Footer() {
   return (
-    <footer className="border-t bg-background py-12 px-6">
+    <footer className="border-t bg-background">
       <div className="mx-auto max-w-8xl ">
-        <div className="flex flex-wrap justify-between gap-8">
+        <div className="flex flex-wrap justify-between gap-8  py-12 px-6">
           <span className="text-muted-foreground order-last block text-center text-sm md:order-first">
             © {new Date().getFullYear()} Company, All rights reserved
           </span>

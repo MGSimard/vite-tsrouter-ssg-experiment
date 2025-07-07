@@ -6,8 +6,8 @@ export const Route = createFileRoute("/(front-facing)/pricing")({
 
 function PagePricing() {
   return (
-    <section className="p-6 pt-[calc(var(--header-height)+1.5rem)]">
-      <div className="max-w-8xl w-full mx-auto">
+    <section>
+      <div className="max-w-8xl w-full mx-auto p-6 pt-[calc(var(--header-height)+1.5rem)]">
         <h1>Pricing</h1>
       </div>
     </section>

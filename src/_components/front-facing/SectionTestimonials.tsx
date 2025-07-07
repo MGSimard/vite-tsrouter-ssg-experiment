@@ -3,8 +3,8 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/_components/ui/avatar";
 
 export function SectionTestimonials() {
   return (
-    <section className="py-16 md:py-32 px-6 ">
-      <div className="mx-auto max-w-5xl space-y-8 md:space-y-16">
+    <section>
+      <div className="mx-auto max-w-5xl space-y-8 md:space-y-16 py-16 md:py-32 px-6">
         <div className="relative z-10 mx-auto max-w-xl space-y-6 text-center md:space-y-12">
           <h2 className="text-4xl font-medium lg:text-5xl">Build by makers, loved by thousand developers</h2>
           <p>

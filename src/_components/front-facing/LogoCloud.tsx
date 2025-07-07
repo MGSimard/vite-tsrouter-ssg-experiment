@@ -3,7 +3,7 @@ import { ProgressiveBlur } from "@/_components/motion-primitives/progressive-blu
 
 export const LogoCloud = () => {
   return (
-    <div className="max-w-8xl w-full mx-auto mt-auto">
+    <div className="max-w-8xl w-full mx-auto mt-auto px-6">
       <p className="text-sm text-muted-foreground">Powering the best teams</p>
       <div className="relative py-6 mask-[linear-gradient(to_right,transparent,black_5rem,black_calc(100%-5rem),transparent)]">
         <InfiniteSlider speedOnHover={20} speed={40} gap={112}>
