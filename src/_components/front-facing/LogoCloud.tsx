@@ -5,7 +5,7 @@ export const LogoCloud = () => {
   return (
     <div className="max-w-8xl w-full mx-auto mt-auto">
       <p className="text-sm text-muted-foreground">Powering the best teams</p>
-      <div className="relative py-6">
+      <div className="relative py-6 mask-[linear-gradient(to_right,transparent,black_5rem,black_calc(100%-5rem),transparent)]">
         <InfiniteSlider speedOnHover={20} speed={40} gap={112}>
           <img
             className="mx-auto h-5 w-fit dark:invert"
@@ -64,8 +64,6 @@ export const LogoCloud = () => {
             width="auto"
           />
         </InfiniteSlider>
-        <div className="bg-linear-to-r from-background absolute inset-y-0 left-0 w-20"></div>
-        <div className="bg-linear-to-l from-background absolute inset-y-0 right-0 w-20"></div>
         <ProgressiveBlur
           className="pointer-events-none absolute left-0 top-0 h-full w-20"
           direction="left"

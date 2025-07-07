@@ -19,7 +19,7 @@ function PageHome() {
         <div className="h-320 absolute left-0 top-0 w-60 -rotate-45 rounded-full bg-[radial-gradient(50%_50%_at_50%_50%,hsla(0,0%,85%,.06)_0,hsla(0,0%,45%,.02)_80%,transparent_100%)] [translate:5%_-50%]"></div>
         <div className="h-320 -translate-y-87.5 absolute left-0 top-0 w-60 -rotate-45 bg-[radial-gradient(50%_50%_at_50%_50%,hsla(0,0%,85%,.04)_0,hsla(0,0%,45%,.02)_80%,transparent_100%)]"></div>
       </div>
-      <section className="text-balance flex flex-col gap-8 justify-center min-h-dvh p-6 pt-[calc(var(--header-height)+1.5rem)]">
+      <section className="text-balance flex flex-col gap-8 justify-center min-h-dvh p-6 pt-[calc(var(--header-height)+1.5rem)] border-b bg-[linear-gradient(to_top,var(--destructive),transparent_20%)]">
         <div className="max-w-8xl w-full mx-auto flex flex-col justify-center gap-8 grow">
           <h1 className="text-4xl md:text-6xl font-bold max-w-2xl">Lorem ipsum dolor sit amet consectetur.</h1>
           <p className="text-pretty text-lg max-w-2xl">
