@@ -5,6 +5,7 @@ import { SectionProblems } from "@/_components/front-facing/SectionProblems";
 import { SectionSolutions } from "@/_components/front-facing/SectionSolution";
 import { SectionFeatures } from "@/_components/front-facing/SectionFeatures";
 import { SectionTestimonials } from "@/_components/front-facing/SectionTestimonials";
+import { CallToAction } from "@/_components/front-facing/CallToAction";
 
 export const Route = createFileRoute("/(front-facing)/")({
   component: PageHome,
@@ -40,6 +41,7 @@ function PageHome() {
       <SectionSolutions />
       <SectionFeatures />
       <SectionTestimonials />
+      <CallToAction />
     </>
   );
 }
