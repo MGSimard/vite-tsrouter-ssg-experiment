@@ -29,7 +29,6 @@
     "@tanstack/react-router-devtools": "^1.121.27",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "dotted-map": "^2.2.3",
     "lucide-react": "^0.519.0",
     "motion": "^12.23.0",
     "react": "^19.1.0",

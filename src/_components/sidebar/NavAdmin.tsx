@@ -43,7 +43,7 @@ export function NavAdmin({
                 <DropdownMenuTrigger asChild>
                   <SidebarMenuButton
                     tooltip={item.title}
-                    className="cursor-pointer data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground">
+                    className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground">
                     <item.icon />
                     {item.title}
                     <MoreHorizontal className="ml-auto" />
@@ -58,7 +58,6 @@ export function NavAdmin({
                       <DropdownMenuItem asChild key={item.title}>
                         <Link
                           to={item.url}
-                          className="cursor-pointer"
                           activeProps={{
                             className: "bg-sidebar-accent font-medium text-sidebar-accent-foreground",
                           }}
