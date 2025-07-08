@@ -11,6 +11,7 @@ import {
 import { ChevronDown, type LucideIcon } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "../ui/collapsible";
+import { useSidebar } from "@/_components/ui/sidebar";
 
 export function NavAdmin({
   items,
@@ -26,6 +27,8 @@ export function NavAdmin({
     }[];
   }[];
 }) {
+  const { setOpenMobile } = useSidebar();
+
   // TODO: Consider mt-auto on admin sidebarGroup to push down by user?
   return (
     <SidebarGroup>
@@ -46,9 +49,14 @@ export function NavAdmin({
                   {item.items?.map((subItem) => (
                     <SidebarMenuSubItem key={subItem.title}>
                       <SidebarMenuSubButton asChild>
-                        <a href={subItem.url}>
-                          <span>{subItem.title}</span>
-                        </a>
+                        <Link
+                          to={item.url}
+                          onClick={() => setOpenMobile(false)}
+                          activeProps={{ "data-active": true }}
+                          activeOptions={{ exact: item.activeExact, includeSearch: false }}>
+                          <item.icon />
+                          <span>{item.title}</span>
+                        </Link>
                       </SidebarMenuSubButton>
                     </SidebarMenuSubItem>
                   ))}
