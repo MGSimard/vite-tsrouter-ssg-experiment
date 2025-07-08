@@ -463,6 +463,7 @@ function SidebarMenuButton({
 } & VariantProps<typeof sidebarMenuButtonVariants>) {
   const Comp = asChild ? Slot : "button";
   const { isMobile, state } = useSidebar();
+  const tooltipId = React.useId();
 
   const button = (
     <Comp
@@ -470,6 +471,7 @@ function SidebarMenuButton({
       data-sidebar="menu-button"
       data-size={size}
       className={cn(sidebarMenuButtonVariants({ variant, size }), className)}
+      aria-labelledby={tooltip && state === "collapsed" ? tooltipId : undefined}
       {...props}
     />
   );
@@ -481,7 +483,7 @@ function SidebarMenuButton({
   return (
     <Tooltip delay={0}>
       <TooltipTrigger render={button} />
-      <TooltipContent side="right" align="center" sideOffset={8}>
+      <TooltipContent side="right" align="center" sideOffset={8} id={tooltipId}>
         {tooltip}
       </TooltipContent>
     </Tooltip>
