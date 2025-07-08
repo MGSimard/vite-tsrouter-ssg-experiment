@@ -452,6 +452,7 @@ const sidebarMenuButtonVariants = cva(
 
 function SidebarMenuButton({
   asChild = false,
+  isActive = false,
   variant = "default",
   size = "default",
   tooltip,
@@ -459,6 +460,7 @@ function SidebarMenuButton({
   ...props
 }: React.ComponentProps<"button"> & {
   asChild?: boolean;
+  isActive?: boolean;
   tooltip?: string;
 } & VariantProps<typeof sidebarMenuButtonVariants>) {
   const Comp = asChild ? Slot : "button";
@@ -470,6 +472,7 @@ function SidebarMenuButton({
       data-slot="sidebar-menu-button"
       data-sidebar="menu-button"
       data-size={size}
+      data-active={isActive}
       className={cn(sidebarMenuButtonVariants({ variant, size }), className)}
       aria-labelledby={tooltip && state === "collapsed" ? tooltipId : undefined}
       {...props}

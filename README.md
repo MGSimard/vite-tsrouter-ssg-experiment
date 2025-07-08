@@ -12,6 +12,7 @@ https://www.shadcn-ui-blocks.com/
 
 Zustand for tracking curr. org context?
 Show currently selected org (&orgsettings active page) with marker
+Sidebar scrollbar styling
 
 --
 
