@@ -6,14 +6,35 @@ import { NavUser } from "@/_components/sidebar/NavUser";
 import {
   Activity,
   AppWindowMac,
+  AudioWaveform,
   ChartNoAxesColumnIncreasing,
+  Command,
+  GalleryVerticalEnd,
   Gauge,
   Settings,
   ShieldCheck,
   Target,
 } from "lucide-react";
+import { TeamSwitcher } from "./NavTeamSwitcher";
 
 const NAV_LINKS = {
+  teams: [
+    {
+      name: "Acme Inc",
+      logo: GalleryVerticalEnd,
+      plan: "Enterprise",
+    },
+    {
+      name: "Acme Corp.",
+      logo: AudioWaveform,
+      plan: "Pro",
+    },
+    {
+      name: "Evil Corp.",
+      logo: Command,
+      plan: "Pro",
+    },
+  ],
   navMain: [
     {
       title: "Overview",
@@ -83,7 +104,7 @@ export function DashboardSidebar() {
   return (
     <Sidebar collapsible="icon">
       <SidebarHeader>
-        <NavTeam items={NAV_LINKS.admin} />
+        <TeamSwitcher teams={NAV_LINKS.teams} />
       </SidebarHeader>
       <SidebarContent>
         <NavMain items={NAV_LINKS.navMain} />
