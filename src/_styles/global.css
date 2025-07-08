@@ -140,6 +140,10 @@
   }
 }
 
+[data-base-ui-portal] {
+  z-index: 9999;
+}
+
 [data-radix-popper-content-wrapper]:has(.wrapper-control) {
   padding-inline: 1.5rem;
   width: 100%;

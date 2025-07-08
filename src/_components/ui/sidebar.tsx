@@ -480,7 +480,7 @@ function SidebarMenuButton({
 
   return (
     <Tooltip delay={0}>
-      <TooltipTrigger>{button}</TooltipTrigger>
+      <TooltipTrigger render={button} />
       <TooltipContent side="right" align="center" sideOffset={8}>
         {tooltip}
       </TooltipContent>
