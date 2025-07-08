@@ -46,7 +46,7 @@ export function NavAdmin({
               </SidebarMenuButton>
             </SidebarMenuItem>
           ) : (
-            <Collapsible key={item.title} asChild defaultOpen={true} className="group/collapsible">
+            <Collapsible key={item.title} asChild defaultOpen={isItemActive} className="group/collapsible">
               <SidebarMenuItem>
                 <CollapsibleTrigger asChild>
                   <SidebarMenuButton tooltip={item.title} data-active={isItemActive}>
