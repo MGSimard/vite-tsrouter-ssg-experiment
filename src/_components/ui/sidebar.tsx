@@ -9,7 +9,7 @@ import { Input } from "@/_components/ui/input";
 import { Separator } from "@/_components/ui/separator";
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle } from "@/_components/ui/sheet";
 import { Skeleton } from "@/_components/ui/skeleton";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/_components/ui/tooltip";
+import { Tooltip, TooltipTrigger, TooltipContent } from "@/_components/ui/tooltip";
 
 const SIDEBAR_COOKIE_NAME = "sidebar_state";
 const SIDEBAR_COOKIE_MAX_AGE = 60 * 60 * 24 * 7;
@@ -111,21 +111,19 @@ function SidebarProvider({
 
   return (
     <SidebarContext.Provider value={contextValue}>
-      <TooltipProvider delayDuration={0}>
-        <div
-          data-slot="sidebar-wrapper"
-          style={
-            {
-              "--sidebar-width": SIDEBAR_WIDTH,
-              "--sidebar-width-icon": SIDEBAR_WIDTH_ICON,
-              ...style,
-            } as React.CSSProperties
-          }
-          className={cn("group/sidebar-wrapper has-data-[variant=inset]:bg-sidebar flex min-h-dvh w-full", className)}
-          {...props}>
-          {children}
-        </div>
-      </TooltipProvider>
+      <div
+        data-slot="sidebar-wrapper"
+        style={
+          {
+            "--sidebar-width": SIDEBAR_WIDTH,
+            "--sidebar-width-icon": SIDEBAR_WIDTH_ICON,
+            ...style,
+          } as React.CSSProperties
+        }
+        className={cn("group/sidebar-wrapper has-data-[variant=inset]:bg-sidebar flex min-h-dvh w-full", className)}
+        {...props}>
+        {children}
+      </div>
     </SidebarContext.Provider>
   );
 }
@@ -461,7 +459,7 @@ function SidebarMenuButton({
   ...props
 }: React.ComponentProps<"button"> & {
   asChild?: boolean;
-  tooltip?: string | React.ComponentProps<typeof TooltipContent>;
+  tooltip?: string;
 } & VariantProps<typeof sidebarMenuButtonVariants>) {
   const Comp = asChild ? Slot : "button";
   const { isMobile, state } = useSidebar();
@@ -476,20 +474,16 @@ function SidebarMenuButton({
     />
   );
 
-  if (!tooltip) {
+  if (!tooltip || state !== "collapsed" || isMobile) {
     return button;
   }
 
-  if (typeof tooltip === "string") {
-    tooltip = {
-      children: tooltip,
-    };
-  }
-
   return (
-    <Tooltip>
-      <TooltipTrigger asChild>{button}</TooltipTrigger>
-      <TooltipContent side="right" align="center" hidden={state !== "collapsed" || isMobile} {...tooltip} />
+    <Tooltip delay={0}>
+      <TooltipTrigger>{button}</TooltipTrigger>
+      <TooltipContent side="right" align="center" sideOffset={8}>
+        {tooltip}
+      </TooltipContent>
     </Tooltip>
   );
 }

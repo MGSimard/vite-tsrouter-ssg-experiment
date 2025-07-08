@@ -41,7 +41,9 @@ export function NavAdmin({
             <DropdownMenu key={item.title}>
               <SidebarMenuItem>
                 <DropdownMenuTrigger asChild>
-                  <SidebarMenuButton className="cursor-pointer data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground">
+                  <SidebarMenuButton
+                    tooltip={item.title}
+                    className="cursor-pointer data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground">
                     <item.icon />
                     {item.title}
                     <MoreHorizontal className="ml-auto" />
