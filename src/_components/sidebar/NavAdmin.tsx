@@ -31,7 +31,7 @@ export function NavAdmin({
   const location = useLocation();
 
   return (
-    <SidebarGroup className="mt-auto">
+    <SidebarGroup>
       <SidebarGroupLabel>Admin</SidebarGroupLabel>
       <SidebarMenu>
         {items.map((item) => {
