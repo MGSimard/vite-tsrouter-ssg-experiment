@@ -1,5 +1,4 @@
 import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader } from "@/_components/ui/sidebar";
-import { NavTeam } from "@/_components/sidebar/NavTeam";
 import { NavMain } from "@/_components/sidebar/NavMain";
 import { NavAdmin } from "@/_components/sidebar/NavAdmin";
 import { NavUser } from "@/_components/sidebar/NavUser";
