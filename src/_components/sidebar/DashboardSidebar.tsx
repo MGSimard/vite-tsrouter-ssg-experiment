@@ -108,7 +108,7 @@ export function DashboardSidebar() {
       </SidebarHeader>
       <SidebarContent>
         <NavMain items={NAV_LINKS.navMain} />
-        {/* <NavAdmin items={NAV_LINKS.admin} /> */}
+        <NavAdmin items={NAV_LINKS.admin} />
       </SidebarContent>
       <SidebarFooter>
         <NavUser />
