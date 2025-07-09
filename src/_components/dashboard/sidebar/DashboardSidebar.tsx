@@ -1,7 +1,7 @@
 import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader } from "@/_components/ui/sidebar";
-import { NavMain } from "@/_components/sidebar/NavMain";
-import { NavAdmin } from "@/_components/sidebar/NavAdmin";
-import { NavUser } from "@/_components/sidebar/NavUser";
+import { NavMain } from "./NavMain";
+import { NavAdmin } from "./NavAdmin";
+import { NavUser } from "./NavUser";
 import {
   Activity,
   AppWindowMac,
