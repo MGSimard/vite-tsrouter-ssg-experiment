@@ -6,13 +6,20 @@ import {
   Activity,
   AppWindowMac,
   AudioWaveform,
+  Blocks,
+  Building,
   ChartNoAxesColumnIncreasing,
   Command,
+  CreditCard,
   GalleryVerticalEnd,
   Gauge,
+  Key,
+  KeySquare,
   Settings,
   ShieldCheck,
   Target,
+  Users,
+  Zap,
 } from "lucide-react";
 import { TeamSwitcher } from "./NavTeamSwitcher";
 
@@ -69,32 +76,30 @@ const NAV_LINKS = {
   ],
   admin: [
     {
-      title: "Organization Settings",
+      title: "General",
       url: "/dashboard/organization-settings",
-      icon: Settings,
-      items: [
-        {
-          title: "General",
-          url: "/dashboard/organization-settings",
-          activeExact: true,
-        },
-        {
-          title: "Team",
-          url: "/dashboard/organization-settings/team",
-        },
-        {
-          title: "Billing",
-          url: "/dashboard/organization-settings/billing",
-        },
-        {
-          title: "Integrations",
-          url: "/dashboard/organization-settings/integrations",
-        },
-        {
-          title: "API Keys",
-          url: "/dashboard/organization-settings/api-keys",
-        },
-      ],
+      icon: Building,
+      activeExact: true,
+    },
+    {
+      title: "Team",
+      url: "/dashboard/organization-settings/team",
+      icon: Users,
+    },
+    {
+      title: "Billing",
+      url: "/dashboard/organization-settings/billing",
+      icon: CreditCard,
+    },
+    {
+      title: "Integrations",
+      url: "/dashboard/organization-settings/integrations",
+      icon: Blocks,
+    },
+    {
+      title: "API Keys",
+      url: "/dashboard/organization-settings/api-keys",
+      icon: KeySquare,
     },
   ],
 };
